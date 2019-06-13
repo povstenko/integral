@@ -7,7 +7,7 @@ body {
 }
 
 .my_trans_grad{
-  background-image: linear-gradient(to left, rgba(48, 203, 206, 0.055), rgba(50, 17, 108, 0.055));
+  background-image: linear-gradient(to left, rgba(48, 203, 206, 0.075), rgba(50, 17, 108, 0.075));
 }
 
 .my_trans_invert_grad{
