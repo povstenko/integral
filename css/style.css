@@ -2,10 +2,6 @@ body {
   padding-top: 56px;
 }
 
-nav {
-  background-color: #007BFF;
-}
-
 .my_grad {
   background-image: linear-gradient(to left, #30CBCE, #33116C);
 }
@@ -14,6 +10,6 @@ nav {
   background-image: linear-gradient(to left, rgba(48, 203, 206, 0.055), rgba(50, 17, 108, 0.055));
 }
 
-.my_trans_ivert_grad{
+.my_trans_invert_grad{
   background-image: linear-gradient(to right, rgba(48, 203, 206, 0.1), rgba(50, 17, 108, 0.1));
 }
