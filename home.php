@@ -13,7 +13,7 @@
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <link href="css/style.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
 
 </head>
 
@@ -22,22 +22,22 @@
   <nav class="my_grad navbar navbar-expand-lg navbar-dark fixed-top  box-shadow">
     <div class="container">
       
-      <a class="navbar-brand" href="test.html">Integral</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="test.htmlnavbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="test.php">Integral</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="test.phpnavbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="test.html">Home
+            <a class="nav-link" href="test.php">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="test.html">Create New Test</a>
+            <a class="nav-link" href="test.php">Create New Test</a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-outline-light" href="signin.html">Sign In</a>
+            <a class="btn btn-outline-light" href="signup.php">Sign Up</a>
           </li>
         </ul>
       </div>
@@ -62,16 +62,16 @@
           <div class="card-header my_trans_invert_grad">
             <ul class="nav nav-tabs card-header-tabs">
               <li class="nav-item">
-                <a class="nav-item nav-link active" id="nav-maths-tab" data-toggle="tab" href="test.htmlnav-maths" role="tab" aria-controls="nav-maths" aria-selected="true">Maths</a>
+                <a class="nav-item nav-link active" id="nav-maths-tab" data-toggle="tab" href="test.phpnav-maths" role="tab" aria-controls="nav-maths" aria-selected="true">Maths</a>
               </li>
               <li class="nav-item">
-                <a class="nav-item nav-link" id="nav-physics-tab" data-toggle="tab" href="test.htmlnav-physics" role="tab" aria-controls="nav-physics" aria-selected="false">Physics</a>
+                <a class="nav-item nav-link" id="nav-physics-tab" data-toggle="tab" href="test.phpnav-physics" role="tab" aria-controls="nav-physics" aria-selected="false">Physics</a>
               </li>
               <li class="nav-item">
-                <a class="nav-item nav-link" id="nav-chemistry-tab" data-toggle="tab" href="test.htmlnav-chemistry" role="tab" aria-controls="nav-chemistry" aria-selected="false">Chemistry</a>
+                <a class="nav-item nav-link" id="nav-chemistry-tab" data-toggle="tab" href="test.phpnav-chemistry" role="tab" aria-controls="nav-chemistry" aria-selected="false">Chemistry</a>
               </li>
               <li class="nav-item">
-                <a class="nav-item nav-link" id="nav-english-tab" data-toggle="tab" href="test.htmlnav-english" role="tab" aria-controls="nav-english" aria-selected="false">English</a>                
+                <a class="nav-item nav-link" id="nav-english-tab" data-toggle="tab" href="test.phpnav-english" role="tab" aria-controls="nav-english" aria-selected="false">English</a>                
               </li>
             </ul>
           </div>
@@ -88,7 +88,7 @@
                           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         </div>
                         <div class="col">
-                          <a href="test.html" class="btn btn-primary float-right">Start Test</a>
+                          <a href="test.php" class="btn btn-primary float-right">Start Test</a>
                         </div>
                       </div>
                     </div>
@@ -102,7 +102,7 @@
                               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                             </div>
                             <div class="col">
-                              <a href="test.html" class="btn btn-primary float-right">Start Test</a>
+                              <a href="test.php" class="btn btn-primary float-right">Start Test</a>
                             </div>
                           </div>
                     </div>
@@ -116,7 +116,7 @@
                               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                             </div>
                             <div class="col">
-                              <a href="test.html" class="btn btn-primary float-right">Start Test</a>
+                              <a href="test.php" class="btn btn-primary float-right">Start Test</a>
                             </div>
                         </div>
                     </div>
@@ -130,7 +130,7 @@
                               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                             </div>
                             <div class="col">
-                              <a href="test.html" class="btn btn-primary float-right">Start Test</a>
+                              <a href="test.php" class="btn btn-primary float-right">Start Test</a>
                             </div>
                         </div>
                     </div>
@@ -146,7 +146,7 @@
                               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                             </div>
                             <div class="col">
-                              <a href="test.html" class="btn btn-primary float-right">Start Test</a>
+                              <a href="test.php" class="btn btn-primary float-right">Start Test</a>
                             </div>
                         </div>
                     </div>
@@ -156,7 +156,7 @@
                     <div class="card-body">
                       <h5 class="card-title">Physics Test 2</h5>
                       <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <a href="test.html" class="btn btn-primary float-right">Start Test</a>
+                      <a href="test.php" class="btn btn-primary float-right">Start Test</a>
                     </div>
                   </div>
 
@@ -170,7 +170,7 @@
                                   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                                 </div>
                                 <div class="col">
-                                  <a href="test.html" class="btn btn-primary float-right">Start Test</a>
+                                  <a href="test.php" class="btn btn-primary float-right">Start Test</a>
                                 </div>
                             </div>
                       </div>
@@ -184,7 +184,7 @@
                                   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                                 </div>
                                 <div class="col">
-                                  <a href="test.html" class="btn btn-primary float-right">Start Test</a>
+                                  <a href="test.php" class="btn btn-primary float-right">Start Test</a>
                                 </div>
                             </div>
                       </div>
@@ -198,7 +198,7 @@
                                   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                                 </div>
                                 <div class="col">
-                                  <a href="test.html" class="btn btn-primary float-right">Start Test</a>
+                                  <a href="test.php" class="btn btn-primary float-right">Start Test</a>
                                 </div>
                             </div>
                       </div>
@@ -213,7 +213,7 @@
                                   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                                 </div>
                                 <div class="col">
-                                  <a href="test.html" class="btn btn-primary float-right">Start Test</a>
+                                  <a href="test.php" class="btn btn-primary float-right">Start Test</a>
                                 </div>
                             </div>
                       </div>
@@ -239,30 +239,30 @@
                 <div class="col-6 col-md">
                     <h5>Features</h5>
                     <ul class="list-unstyled text-small">
-                      <li><a class="text-muted" href="test.html">Lorem ipsum</a></li>
-                        <li><a class="text-muted" href="test.html">Lorem ipsum</a></li>
-                        <li><a class="text-muted" href="test.html">Lorem ipsum</a></li>
-                        <li><a class="text-muted" href="test.html">Lorem ipsum</a></li>
-                        <li><a class="text-muted" href="test.html">Lorem ipsum</a></li>
-                        <li><a class="text-muted" href="test.html">Lorem ipsum</a></li>
+                      <li><a class="text-muted" href="test.php">Lorem ipsum</a></li>
+                        <li><a class="text-muted" href="test.php">Lorem ipsum</a></li>
+                        <li><a class="text-muted" href="test.php">Lorem ipsum</a></li>
+                        <li><a class="text-muted" href="test.php">Lorem ipsum</a></li>
+                        <li><a class="text-muted" href="test.php">Lorem ipsum</a></li>
+                        <li><a class="text-muted" href="test.php">Lorem ipsum</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-md">
                     <h5>Resources</h5>
                     <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="test.html">Lorem ipsum</a></li>
-                        <li><a class="text-muted" href="test.html">Lorem ipsum</a></li>
-                        <li><a class="text-muted" href="test.html">Lorem ipsum</a></li>
-                        <li><a class="text-muted" href="test.html">Lorem ipsum</a></li>
+                        <li><a class="text-muted" href="test.php">Lorem ipsum</a></li>
+                        <li><a class="text-muted" href="test.php">Lorem ipsum</a></li>
+                        <li><a class="text-muted" href="test.php">Lorem ipsum</a></li>
+                        <li><a class="text-muted" href="test.php">Lorem ipsum</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-md">
                     <h5>About</h5>
                     <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="test.html">Lorem</a></li>
-                        <li><a class="text-muted" href="test.html">Lorem</a></li>
-                        <li><a class="text-muted" href="test.html">Lorem</a></li>
-                        <li><a class="text-muted" href="test.html">Lorem</a></li>
+                        <li><a class="text-muted" href="test.php">Lorem</a></li>
+                        <li><a class="text-muted" href="test.php">Lorem</a></li>
+                        <li><a class="text-muted" href="test.php">Lorem</a></li>
+                        <li><a class="text-muted" href="test.php">Lorem</a></li>
                     </ul>
                 </div>
             </div>
