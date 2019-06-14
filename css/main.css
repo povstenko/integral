@@ -1,0 +1,15 @@
+body {
+  padding-top: 56px;
+}
+
+.my_grad {
+  background-image: linear-gradient(to left, #30CBCE, #33116C);
+}
+
+.my_trans_grad{
+  background-image: linear-gradient(to left, rgba(48, 203, 206, 0.075), rgba(50, 17, 108, 0.075));
+}
+
+.my_trans_invert_grad{
+  background-image: linear-gradient(to right, rgba(48, 203, 206, 0.1), rgba(50, 17, 108, 0.1));
+}
