@@ -31,7 +31,7 @@
     <div class="container">
       
       <a class="navbar-brand" href="home.php">Integral</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="test.phpnavbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -80,16 +80,16 @@
           <div class="card-header my_trans_invert_grad">
             <ul class="nav nav-tabs card-header-tabs">
               <li class="nav-item">
-                <a class="nav-item nav-link active" id="nav-maths-tab" data-toggle="tab" href="test.phpnav-maths" role="tab" aria-controls="nav-maths" aria-selected="true">Maths</a>
+                <a class="nav-item nav-link active" id="nav-maths-tab" data-toggle="tab" href="#pnav-maths" role="tab" aria-controls="nav-maths" aria-selected="true">Maths</a>
               </li>
               <li class="nav-item">
-                <a class="nav-item nav-link" id="nav-physics-tab" data-toggle="tab" href="test.phpnav-physics" role="tab" aria-controls="nav-physics" aria-selected="false">Physics</a>
+                <a class="nav-item nav-link" id="nav-physics-tab" data-toggle="tab" href="#nav-physics" role="tab" aria-controls="nav-physics" aria-selected="false">Physics</a>
               </li>
               <li class="nav-item">
-                <a class="nav-item nav-link" id="nav-chemistry-tab" data-toggle="tab" href="test.phpnav-chemistry" role="tab" aria-controls="nav-chemistry" aria-selected="false">Chemistry</a>
+                <a class="nav-item nav-link" id="nav-chemistry-tab" data-toggle="tab" href="#nav-chemistry" role="tab" aria-controls="nav-chemistry" aria-selected="false">Chemistry</a>
               </li>
               <li class="nav-item">
-                <a class="nav-item nav-link" id="nav-english-tab" data-toggle="tab" href="test.phpnav-english" role="tab" aria-controls="nav-english" aria-selected="false">English</a>                
+                <a class="nav-item nav-link" id="nav-english-tab" data-toggle="tab" href="#nav-english" role="tab" aria-controls="nav-english" aria-selected="false">English</a>                
               </li>
             </ul>
           </div>
@@ -106,7 +106,7 @@
                           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         </div>
                         <div class="col">
-                          <a href="test.php" class="btn btn-primary float-right">Start Test</a>
+                          <a href="#" class="btn btn-primary float-right">Start Test</a>
                         </div>
                       </div>
                     </div>
@@ -120,7 +120,7 @@
                               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                             </div>
                             <div class="col">
-                              <a href="test.php" class="btn btn-primary float-right">Start Test</a>
+                              <a href="#" class="btn btn-primary float-right">Start Test</a>
                             </div>
                           </div>
                     </div>
@@ -134,7 +134,7 @@
                               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                             </div>
                             <div class="col">
-                              <a href="test.php" class="btn btn-primary float-right">Start Test</a>
+                              <a href="#" class="btn btn-primary float-right">Start Test</a>
                             </div>
                         </div>
                     </div>
@@ -148,7 +148,7 @@
                               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                             </div>
                             <div class="col">
-                              <a href="test.php" class="btn btn-primary float-right">Start Test</a>
+                              <a href="#" class="btn btn-primary float-right">Start Test</a>
                             </div>
                         </div>
                     </div>
@@ -164,7 +164,7 @@
                               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                             </div>
                             <div class="col">
-                              <a href="test.php" class="btn btn-primary float-right">Start Test</a>
+                              <a href="#" class="btn btn-primary float-right">Start Test</a>
                             </div>
                         </div>
                     </div>
@@ -174,7 +174,7 @@
                     <div class="card-body">
                       <h5 class="card-title">Physics Test 2</h5>
                       <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <a href="test.php" class="btn btn-primary float-right">Start Test</a>
+                      <a href="#" class="btn btn-primary float-right">Start Test</a>
                     </div>
                   </div>
 
@@ -188,7 +188,7 @@
                                   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                                 </div>
                                 <div class="col">
-                                  <a href="test.php" class="btn btn-primary float-right">Start Test</a>
+                                  <a href="#" class="btn btn-primary float-right">Start Test</a>
                                 </div>
                             </div>
                       </div>
@@ -202,7 +202,7 @@
                                   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                                 </div>
                                 <div class="col">
-                                  <a href="test.php" class="btn btn-primary float-right">Start Test</a>
+                                  <a href="#" class="btn btn-primary float-right">Start Test</a>
                                 </div>
                             </div>
                       </div>
@@ -216,7 +216,7 @@
                                   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                                 </div>
                                 <div class="col">
-                                  <a href="test.php" class="btn btn-primary float-right">Start Test</a>
+                                  <a href="#" class="btn btn-primary float-right">Start Test</a>
                                 </div>
                             </div>
                       </div>
@@ -231,7 +231,7 @@
                                   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                                 </div>
                                 <div class="col">
-                                  <a href="test.php" class="btn btn-primary float-right">Start Test</a>
+                                  <a href="#" class="btn btn-primary float-right">Start Test</a>
                                 </div>
                             </div>
                       </div>
@@ -257,30 +257,30 @@
                 <div class="col-6 col-md">
                     <h5>Features</h5>
                     <ul class="list-unstyled text-small">
-                      <li><a class="text-muted" href="test.php">Lorem ipsum</a></li>
-                        <li><a class="text-muted" href="test.php">Lorem ipsum</a></li>
-                        <li><a class="text-muted" href="test.php">Lorem ipsum</a></li>
-                        <li><a class="text-muted" href="test.php">Lorem ipsum</a></li>
-                        <li><a class="text-muted" href="test.php">Lorem ipsum</a></li>
-                        <li><a class="text-muted" href="test.php">Lorem ipsum</a></li>
+                      <li><a class="text-muted" href="#">Lorem ipsum</a></li>
+                        <li><a class="text-muted" href="#">Lorem ipsum</a></li>
+                        <li><a class="text-muted" href="#">Lorem ipsum</a></li>
+                        <li><a class="text-muted" href="#">Lorem ipsum</a></li>
+                        <li><a class="text-muted" href="#">Lorem ipsum</a></li>
+                        <li><a class="text-muted" href="#">Lorem ipsum</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-md">
                     <h5>Resources</h5>
                     <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="test.php">Lorem ipsum</a></li>
-                        <li><a class="text-muted" href="test.php">Lorem ipsum</a></li>
-                        <li><a class="text-muted" href="test.php">Lorem ipsum</a></li>
-                        <li><a class="text-muted" href="test.php">Lorem ipsum</a></li>
+                        <li><a class="text-muted" href="#">Lorem ipsum</a></li>
+                        <li><a class="text-muted" href="#">Lorem ipsum</a></li>
+                        <li><a class="text-muted" href="#">Lorem ipsum</a></li>
+                        <li><a class="text-muted" href="#">Lorem ipsum</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-md">
                     <h5>About</h5>
                     <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="test.php">Lorem</a></li>
-                        <li><a class="text-muted" href="test.php">Lorem</a></li>
-                        <li><a class="text-muted" href="test.php">Lorem</a></li>
-                        <li><a class="text-muted" href="test.php">Lorem</a></li>
+                        <li><a class="text-muted" href="#">Lorem</a></li>
+                        <li><a class="text-muted" href="#">Lorem</a></li>
+                        <li><a class="text-muted" href="#">Lorem</a></li>
+                        <li><a class="text-muted" href="#">Lorem</a></li>
                     </ul>
                 </div>
             </div>
