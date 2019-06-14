@@ -1,3 +1,11 @@
+<?php
+  require "db.php";
+
+  
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,23 +30,33 @@
   <nav class="my_grad navbar navbar-expand-lg navbar-dark fixed-top  box-shadow">
     <div class="container">
       
-      <a class="navbar-brand" href="test.php">Integral</a>
+      <a class="navbar-brand" href="home.php">Integral</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="test.phpnavbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="test.php">Home
+            <a class="nav-link" href="home.php">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="test.php">Create New Test</a>
+            <a class="nav-link" href="#">Create New Test</a>
           </li>
-          <li class="nav-item">
-            <a class="btn btn-outline-light" href="signup.php">Sign Up</a>
-          </li>
+            
+          <?php if(isset($_SESSION['logged_user'])) : ?>
+            <li class="nav-item">
+              <a class="nav-link" href="account.php">Account (<?php echo $_SESSION['logged_user']->login;?>)</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-outline-light" href="logout.php">Log Out</a>
+            </li>
+          <?php else : ?>
+            <li class="nav-item">
+              <a class="btn btn-outline-light" href="login.php">Log In</a>
+            </li>
+          <?php endif; ?>
         </ul>
       </div>
     </div>
