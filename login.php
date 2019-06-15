@@ -46,9 +46,11 @@
     <link href="css/main.css" rel="stylesheet">
   </head>
 
-  <body class="text-center my_trans_grad">
+  <body class="text-center" style="background-image: linear-gradient(to left, rgba(48, 203, 206, 0.1), rgba(50, 17, 108, 0.1)">
     <form class="form-login" action="login.php" method="POST">
-      <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+      <a href="home.php">
+        <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+      </a>
       <h1 class="h3 mb-3 font-weight-normal">Please log in</h1>
 
       <label for="inputLogin" class="sr-only">Login</label>
@@ -63,6 +65,7 @@
         </label>
       </div>
       <button class="btn btn-lg btn-primary btn-block" type="submit" name="do_login">Log in</button>
+      <p class="mt-5 mb-3">Don't have an account? <a href="signup.php">Sign Up</a></p>
       <p class="mt-5 mb-3 text-muted">&copy; 2019</p>
     </form>
   </body>

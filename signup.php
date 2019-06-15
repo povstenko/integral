@@ -17,11 +17,11 @@
       $user->email = $data['email'];
       $user->password = password_hash($data['password'], PASSWORD_DEFAULT);
       R::store($user);
-      header('location: javascript://history.go(-1)');
+      
+      $_SESSION['logged_user'] = $user;
+      header('location: home.php');
     }
-    
   }
-
 ?>
 
 <!doctype html>
@@ -43,9 +43,11 @@
     <link href="css/main.css" rel="stylesheet">
   </head>
 
-  <body class="text-center my_trans_grad">
+  <body class="text-center" style="background-image: linear-gradient(to left, rgba(48, 203, 206, 0.1), rgba(50, 17, 108, 0.1)">
     <form class="form-login" action="signup.php" method="POST">
-      <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+      <a href="home.php">
+        <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+      </a>
       <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
 
       <label for="inputLogin" class="sr-only">Login</label>
@@ -58,6 +60,7 @@
       <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
 
       <button class="btn btn-lg btn-primary btn-block" type="submit" name="do_signup">Sign up</button>
+      <p class="mt-5 mb-3">Already have an account? <a href="login.php">Log In</a></p>
       <p class="mt-5 mb-3 text-muted">&copy; 2019</p>
     </form>
   </body>

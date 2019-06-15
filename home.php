@@ -27,7 +27,7 @@
 
 <body class="my_trans_grad">
   <!-- Navigation -->    
-  <nav class="my_grad navbar navbar-expand-lg navbar-dark fixed-top  box-shadow">
+  <nav class="my_grad navbar navbar-expand-lg navbar-dark fixed-top box-shadow">
     <div class="container">
       
       <a class="navbar-brand" href="home.php">Integral</a>
@@ -80,7 +80,7 @@
           <div class="card-header my_trans_invert_grad">
             <ul class="nav nav-tabs card-header-tabs">
               <li class="nav-item">
-                <a class="nav-item nav-link active" id="nav-maths-tab" data-toggle="tab" href="#pnav-maths" role="tab" aria-controls="nav-maths" aria-selected="true">Maths</a>
+                <a class="nav-item nav-link active" id="nav-maths-tab" data-toggle="tab" href="#nav-maths" role="tab" aria-controls="nav-maths" aria-selected="true">Maths</a>
               </li>
               <li class="nav-item">
                 <a class="nav-item nav-link" id="nav-physics-tab" data-toggle="tab" href="#nav-physics" role="tab" aria-controls="nav-physics" aria-selected="false">Physics</a>
@@ -106,7 +106,7 @@
                           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                         </div>
                         <div class="col">
-                          <a href="#" class="btn btn-primary float-right">Start Test</a>
+                          <a href="test.php" class="btn btn-primary float-right">Start Test</a>
                         </div>
                       </div>
                     </div>
@@ -120,7 +120,7 @@
                               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                             </div>
                             <div class="col">
-                              <a href="#" class="btn btn-primary float-right">Start Test</a>
+                              <a href="test.php" class="btn btn-primary float-right">Start Test</a>
                             </div>
                           </div>
                     </div>
@@ -134,7 +134,7 @@
                               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                             </div>
                             <div class="col">
-                              <a href="#" class="btn btn-primary float-right">Start Test</a>
+                              <a href="test.php" class="btn btn-primary float-right">Start Test</a>
                             </div>
                         </div>
                     </div>
@@ -148,7 +148,7 @@
                               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                             </div>
                             <div class="col">
-                              <a href="#" class="btn btn-primary float-right">Start Test</a>
+                              <a href="test.php" class="btn btn-primary float-right">Start Test</a>
                             </div>
                         </div>
                     </div>
@@ -164,7 +164,7 @@
                               <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                             </div>
                             <div class="col">
-                              <a href="#" class="btn btn-primary float-right">Start Test</a>
+                              <a href="test.php" class="btn btn-primary float-right">Start Test</a>
                             </div>
                         </div>
                     </div>
@@ -174,7 +174,7 @@
                     <div class="card-body">
                       <h5 class="card-title">Physics Test 2</h5>
                       <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <a href="#" class="btn btn-primary float-right">Start Test</a>
+                      <a href="test.php" class="btn btn-primary float-right">Start Test</a>
                     </div>
                   </div>
 
@@ -188,7 +188,7 @@
                                   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                                 </div>
                                 <div class="col">
-                                  <a href="#" class="btn btn-primary float-right">Start Test</a>
+                                  <a href="test.php" class="btn btn-primary float-right">Start Test</a>
                                 </div>
                             </div>
                       </div>
@@ -202,7 +202,7 @@
                                   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                                 </div>
                                 <div class="col">
-                                  <a href="#" class="btn btn-primary float-right">Start Test</a>
+                                  <a href="test.php" class="btn btn-primary float-right">Start Test</a>
                                 </div>
                             </div>
                       </div>
@@ -216,7 +216,7 @@
                                   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                                 </div>
                                 <div class="col">
-                                  <a href="#" class="btn btn-primary float-right">Start Test</a>
+                                  <a href="test.php" class="btn btn-primary float-right">Start Test</a>
                                 </div>
                             </div>
                       </div>
@@ -231,7 +231,7 @@
                                   <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                                 </div>
                                 <div class="col">
-                                  <a href="#" class="btn btn-primary float-right">Start Test</a>
+                                  <a href="test.php" class="btn btn-primary float-right">Start Test</a>
                                 </div>
                             </div>
                       </div>
@@ -248,7 +248,7 @@
   <!-- Footer -->
 <div class="my_trans_invert_grad">
     <div class="container">
-        <footer class="pt-4 my-md-5 pt-md-5 border-top ">
+        <footer class="pt-4 md-5 pt-md-5 pb-5 mt-5 border-top">
             <div class="row">
                 <div class="col-12 col-md">
                     <img class="mb-2" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="24" height="24">

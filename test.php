@@ -83,7 +83,7 @@
               </div>
         </div>
         <div class="col-3">
-          <div class="card">
+          <div class="card mb-5">
             <div class="card-header my_trans_invert_grad">
               Questions
             </div>
@@ -103,7 +103,7 @@
   <!-- Footer -->
 <div class="my_trans_invert_grad">
     <div class="container">
-        <footer class="pt-4 my-md-5 pt-md-5 border-top ">
+        <footer class="pt-4 md-5 pt-md-5 pb-5 mt-5 border-top">
             <div class="row">
                 <div class="col-12 col-md">
                     <img class="mb-2" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="24" height="24">
