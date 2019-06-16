@@ -18,130 +18,189 @@
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <link href="css/main.css" rel="stylesheet">
+  <link href="css/test.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC&display=swap" rel="stylesheet">
 
 </head>
 
 <body class="my_trans_grad">
+  
   <!-- Navigation -->    
-  <nav class="my_grad navbar navbar-expand-lg navbar-dark fixed-top  box-shadow">
-    <div class="container">
-      
-      <a class="navbar-brand" href="home.php">Integral</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="home.php">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Create New Test</a>
-          </li>
-          <li class="nav-item">
-            <a class="btn btn-outline-light" href="login.php">Sign In</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <?php include 'navigation.php'; ?>
 
   <!-- Header -->
-  <header class="my_grad bg-primary py-5 mb-5 border-bottom box-shadow h-50">
-      <div class="container h-100">
-        <div class="row h-100 align-items-center">
+  <header class="my_grad bg-primary pt-5 pb-3 mb-5 border-bottom box-shadow">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-lg-12">
+          <h1 class="display-6 text-white mb-2" style="font-family: 'Alegreya Sans SC', sans-serif;">Test Title</h1>
+          <p class="lead mb-5 text-white-50">Test Description Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
         </div>
       </div>
-    </header>
+      <ul class="nav nav-pills" id="pills-tab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="pills-1-tab" data-toggle="pill" href="#pills-1" role="tab" aria-controls="pills-1" aria-selected="true">1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="pills-2-tab" data-toggle="pill" href="#pills-2" role="tab" aria-controls="pills-2" aria-selected="false">2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="pills-3-tab" data-toggle="pill" href="#pills-3" role="tab" aria-controls="pills-3" aria-selected="false">3</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="pills-4-tab" data-toggle="pill" href="#pills-4" role="tab" aria-controls="pills-4" aria-selected="false">4</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="pills-5-tab" data-toggle="pill" href="#pills-5" role="tab" aria-controls="pills-5" aria-selected="false">5</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="pills-6-tab" data-toggle="pill" href="#pills-6" role="tab" aria-controls="pills-6" aria-selected="false">6</a>
+        </li>
+      </ul>
+    </div>
+  </header>
 
   <!-- Page Content -->
   <div class="container">
-      <div class="row">
-        <div class="col-9">
-            <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">1/6</h5>
-                  <p class="card-text">Question Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
+    <div class="tab-content" id="pills-tabContent">   
 
-                  <div class="custom-control custom-radio">
-                      <input type="radio" class="custom-control-input" id="var1" name="variants">
-                      <label class="custom-control-label" for="var1">Variant 1</label>
-                  </div>
-                  <div class="custom-control custom-radio">
-                      <input type="radio" class="custom-control-input" id="var2" name="variants">
-                      <label class="custom-control-label" for="var2">Variant 2</label>
-                  </div>
-                  <div class="custom-control custom-radio">
-                      <input type="radio" class="custom-control-input" id="var3" name="variants">
-                      <label class="custom-control-label" for="var3">Variant 3</label>
-                  </div>
-
-                  <a href="#" class="btn btn-primary float-right">Next</a>
-                </div>
+      <div class="tab-pane fade show active" id="pills-1" role="tabpanel" aria-labelledby="pills-1-tab">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">1/6</h5>
+            <p class="card-text">Question Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="var1" name="variants">
+                <label class="custom-control-label" for="var1">Variant 1</label>
               </div>
-        </div>
-        <div class="col-3">
-          <div class="card mb-5">
-            <div class="card-header my_trans_invert_grad">
-              Questions
-            </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Question 1</li>
-              <li class="list-group-item">Question 2</li>
-              <li class="list-group-item">Question 3</li>
-              <li class="list-group-item">Question 4</li>
-              <li class="list-group-item">Question 5</li>
-              <li class="list-group-item">Question 6</li>
-            </ul>
+              <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="var2" name="variants">
+                <label class="custom-control-label" for="var2">Variant 2</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="var3" name="variants">
+                <label class="custom-control-label" for="var3">Variant 3</label>
+              </div>
+            <a href="#" class="btn btn-primary float-right">Next</a>
           </div>
         </div>
       </div>
+
+      <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-2-tab">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">2/6</h5>
+              <p class="card-text">Question Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
+                <div class="custom-control custom-radio">
+                  <input type="radio" class="custom-control-input" id="var1" name="variants">
+                  <label class="custom-control-label" for="var1">Variant 1</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" class="custom-control-input" id="var2" name="variants">
+                  <label class="custom-control-label" for="var2">Variant 2</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" class="custom-control-input" id="var3" name="variants">
+                  <label class="custom-control-label" for="var3">Variant 3</label>
+                </div>
+              <a href="#" class="btn btn-primary float-right">Next</a>
+          </div>
+        </div>
+      </div>   
+
+      <div class="tab-pane fade" id="pills-3" role="tabpanel" aria-labelledby="pills-3-tab">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">3/6</h5>
+              <p class="card-text">Question Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
+            <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="var1" name="variants">
+              <label class="custom-control-label" for="var1">Variant 1</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="var2" name="variants">
+              <label class="custom-control-label" for="var2">Variant 2</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input type="radio" class="custom-control-input" id="var3" name="variants">
+              <label class="custom-control-label" for="var3">Variant 3</label>
+            </div>
+              <a href="#" class="btn btn-primary float-right">Next</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="pills-4" role="tabpanel" aria-labelledby="pills-4-tab">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">4/6</h5>
+            <p class="card-text">Question Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="var1" name="variants">
+                <label class="custom-control-label" for="var1">Variant 1</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="var2" name="variants">
+                <label class="custom-control-label" for="var2">Variant 2</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="var3" name="variants">
+                <label class="custom-control-label" for="var3">Variant 3</label>
+              </div>
+            <a href="#" class="btn btn-primary float-right">Next</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="pills-5" role="tabpanel" aria-labelledby="pills-5-tab">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">5/6</h5>
+            <p class="card-text">Question Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="var1" name="variants">
+                <label class="custom-control-label" for="var1">Variant 1</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="var2" name="variants">
+                <label class="custom-control-label" for="var2">Variant 2</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="var3" name="variants">
+                <label class="custom-control-label" for="var3">Variant 3</label>
+              </div>
+            <a href="#" class="btn btn-primary float-right">Next</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="pills-6" role="tabpanel" aria-labelledby="pills-6-tab">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">6/6</h5>
+            <p class="card-text">Question Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="var1" name="variants">
+                <label class="custom-control-label" for="var1">Variant 1</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="var2" name="variants">
+                <label class="custom-control-label" for="var2">Variant 2</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" class="custom-control-input" id="var3" name="variants">
+                <label class="custom-control-label" for="var3">Variant 3</label>
+              </div>
+            <a href="#" class="btn btn-primary float-right">Next</a>
+          </div>
+        </div>
+      </div>     
+    </div>
   </div>
 
   <!-- Footer -->
-<div class="my_trans_invert_grad">
-    <div class="container">
-        <footer class="pt-4 md-5 pt-md-5 pb-5 mt-5 border-top">
-            <div class="row">
-                <div class="col-12 col-md">
-                    <img class="mb-2" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="24" height="24">
-                    <small class="d-block mb-3 text-muted">© 2019</small>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Features</h5>
-                    <ul class="list-unstyled text-small">
-                      <li><a class="text-muted" href="#">Lorem ipsum</a></li>
-                        <li><a class="text-muted" href="#">Lorem ipsum</a></li>
-                        <li><a class="text-muted" href="#">Lorem ipsum</a></li>
-                        <li><a class="text-muted" href="#">Lorem ipsum</a></li>
-                        <li><a class="text-muted" href="#">Lorem ipsum</a></li>
-                        <li><a class="text-muted" href="#">Lorem ipsum</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Resources</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="#">Lorem ipsum</a></li>
-                        <li><a class="text-muted" href="#">Lorem ipsum</a></li>
-                        <li><a class="text-muted" href="#">Lorem ipsum</a></li>
-                        <li><a class="text-muted" href="#">Lorem ipsum</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>About</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="#">Lorem</a></li>
-                        <li><a class="text-muted" href="#">Lorem</a></li>
-                        <li><a class="text-muted" href="#">Lorem</a></li>
-                        <li><a class="text-muted" href="#">Lorem</a></li>
-                    </ul>
-                </div>
-            </div>
-        </footer>
-    </div>
-</div>
+  <?php include 'footer.php'; ?>
     
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>

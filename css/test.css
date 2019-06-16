@@ -1,0 +1,10 @@
+.nav-pills .nav-item [aria-selected ="true"]{
+    border-radius: 50% !important;
+    background-color: white;
+    color: #33116C;
+}
+
+.nav-pills .nav-item [aria-selected ="false"]{
+    border-radius: 50% !important;
+    color: white;
+}

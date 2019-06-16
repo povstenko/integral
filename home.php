@@ -18,56 +18,27 @@
 
   <title>Integral - Testing Portal</title>
 
+  
+
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <link href="css/main.css" rel="stylesheet">
 
+  <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC&display=swap" rel="stylesheet">
 </head>
 
 <body class="my_trans_grad">
+  
   <!-- Navigation -->    
-  <nav class="my_grad navbar navbar-expand-lg navbar-dark fixed-top box-shadow">
-    <div class="container">
-      
-      <a class="navbar-brand" href="home.php">Integral</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="home.php">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Create New Test</a>
-          </li>
-            
-          <?php if(isset($_SESSION['logged_user'])) : ?>
-            <li class="nav-item">
-              <a class="nav-link" href="account.php">Account (<?php echo $_SESSION['logged_user']->login;?>)</a>
-            </li>
-            <li class="nav-item">
-              <a class="btn btn-outline-light" href="logout.php">Log Out</a>
-            </li>
-          <?php else : ?>
-            <li class="nav-item">
-              <a class="btn btn-outline-light" href="login.php">Log In</a>
-            </li>
-          <?php endif; ?>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <?php include 'navigation.php'; ?>
 
   <!-- Header -->
   <header class="my_grad bg-primary py-5 mb-5 border-bottom box-shadow">
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-lg-12">
-          <h1 class="display-4 text-white mt-5 mb-2">Integral</h1>
+          <h1 class="display-4 text-white mt-5 mb-2" style="font-family: 'Alegreya Sans SC', sans-serif;">INTEGRAL</h1>
           <p class="lead mb-5 text-white-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non possimus ab labore provident mollitia. Id assumenda voluptate earum corporis facere quibusdam quisquam iste ipsa cumque unde nisi, totam quas ipsam.</p>
         </div>
       </div>
@@ -246,47 +217,7 @@
   <!-- /.container -->
 
   <!-- Footer -->
-<div class="my_trans_invert_grad">
-    <div class="container">
-        <footer class="pt-4 md-5 pt-md-5 pb-5 mt-5 border-top">
-            <div class="row">
-                <div class="col-12 col-md">
-                    <img class="mb-2" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="24" height="24">
-                    <small class="d-block mb-3 text-muted">© 2019</small>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Features</h5>
-                    <ul class="list-unstyled text-small">
-                      <li><a class="text-muted" href="#">Lorem ipsum</a></li>
-                        <li><a class="text-muted" href="#">Lorem ipsum</a></li>
-                        <li><a class="text-muted" href="#">Lorem ipsum</a></li>
-                        <li><a class="text-muted" href="#">Lorem ipsum</a></li>
-                        <li><a class="text-muted" href="#">Lorem ipsum</a></li>
-                        <li><a class="text-muted" href="#">Lorem ipsum</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Resources</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="#">Lorem ipsum</a></li>
-                        <li><a class="text-muted" href="#">Lorem ipsum</a></li>
-                        <li><a class="text-muted" href="#">Lorem ipsum</a></li>
-                        <li><a class="text-muted" href="#">Lorem ipsum</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>About</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="#">Lorem</a></li>
-                        <li><a class="text-muted" href="#">Lorem</a></li>
-                        <li><a class="text-muted" href="#">Lorem</a></li>
-                        <li><a class="text-muted" href="#">Lorem</a></li>
-                    </ul>
-                </div>
-            </div>
-        </footer>
-    </div>
-</div>
+  <?php include 'footer.php'; ?>
     
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
