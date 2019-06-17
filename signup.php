@@ -19,7 +19,7 @@
       R::store($user);
       
       $_SESSION['logged_user'] = $user;
-      header('location: home.php');
+      header('location: index.php');
     }
   }
 ?>
@@ -45,7 +45,7 @@
 
   <body class="text-center" style="background-image: linear-gradient(to left, rgba(48, 203, 206, 0.1), rgba(50, 17, 108, 0.1)">
     <form class="form-login" action="signup.php" method="POST">
-      <a href="home.php">
+      <a href="index.php">
         <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
       </a>
       <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>

@@ -1,40 +1,5 @@
-<?php
-  require "db.php";
-
-  
-?>
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Integral - Testing Portal</title>
-
-  
-
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <link href="css/main.css" rel="stylesheet">
-
-  <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC&display=swap" rel="stylesheet">
-</head>
-
-<body class="my_trans_grad">
-  
-  <!-- Navigation -->    
-  <?php include 'navigation.php'; ?>
-
-  <!-- Header -->
-  <header class="my_grad bg-primary py-5 mb-5 border-bottom box-shadow">
+<!-- Header -->
+<header class="my_grad bg-primary py-5 mb-5 border-bottom box-shadow">
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-lg-12">
@@ -215,14 +180,3 @@
     </div>
   </div>
   <!-- /.container -->
-
-  <!-- Footer -->
-  <?php include 'footer.php'; ?>
-    
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-</body>
-
-</html>
