@@ -68,10 +68,10 @@
                         <?php foreach($physics_tests as $test): ?>
                             <div class="card text-left mb-3">
                                 <div class="card-body">
-                                    <h5 class="card-title"><?$test['name'];?></h5>
+                                    <h5 class="card-title"><?=$test['name'];?></h5>
                                     <div class="row">
                                         <div class="col">
-                                            <p class="card-text"><?$test['description'];?></p>
+                                            <p class="card-text"><?=$test['description'];?></p>
                                         </div>
                                         <div class="col">
                                             <a href="test.php" class="btn btn-primary float-right">Start Test</a>
@@ -91,15 +91,15 @@
               </div>
               <div class="tab-pane fade" id="nav-chemistry" role="tabpanel" aria-labelledby="nav-chemistry-tab">
                 <?php
-                    $chemistry_tests = get_tests_by_type('physics');
+                    $chemistry_tests = get_tests_by_type('chemistry');
                     if($chemistry_tests): ?>
                         <?php foreach($chemistry_tests as $test): ?>
                             <div class="card text-left mb-3">
                                 <div class="card-body">
-                                    <h5 class="card-title"><?$test['name'];?></h5>
+                                    <h5 class="card-title"><?=$test['name'];?></h5>
                                     <div class="row">
                                         <div class="col">
-                                            <p class="card-text"><?$test['description'];?></p>
+                                            <p class="card-text"><?=$test['description'];?></p>
                                         </div>
                                         <div class="col">
                                             <a href="test.php" class="btn btn-primary float-right">Start Test</a>
@@ -119,15 +119,15 @@
               </div>
               <div class="tab-pane fade" id="nav-english" role="tabpanel" aria-labelledby="nav-english-tab">
                     <?php
-                    $english_tests = get_tests_by_type('physics');
+                    $english_tests = get_tests_by_type('english');
                     if($english_tests): ?>
                         <?php foreach($english_tests as $test): ?>
                             <div class="card text-left mb-3">
                                 <div class="card-body">
-                                    <h5 class="card-title"><?$test['name'];?></h5>
+                                    <h5 class="card-title"><?=$test['name'];?></h5>
                                     <div class="row">
                                         <div class="col">
-                                            <p class="card-text"><?$test['description'];?></p>
+                                            <p class="card-text"><?=$test['description'];?></p>
                                         </div>
                                         <div class="col">
                                             <a href="test.php" class="btn btn-primary float-right">Start Test</a>
