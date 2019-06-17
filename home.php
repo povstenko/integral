@@ -34,144 +34,116 @@
             <div class="tab-content" id="nav-tabContent">
               <div class="tab-pane fade show active" id="nav-maths" role="tabpanel" aria-labelledby="nav-maths-tab">
 
-                  <div class="card text-left mb-3">
-                    <div class="card-body">
-                      <h5 class="card-title">Maths Test 1</h5>
-                      <div class="row">
-                        <div class="col">
-                          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        </div>
-                        <div class="col">
-                          <a href="test.php" class="btn btn-primary float-right">Start Test</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="card text-left mb-3">
-                    <div class="card-body">
-                      <h5 class="card-title">Maths Test 2</h5>
-                      <div class="row">
-                            <div class="col">
-                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            </div>
-                            <div class="col">
-                              <a href="test.php" class="btn btn-primary float-right">Start Test</a>
-                            </div>
-                          </div>
-                    </div>
-                  </div>
-
-                  <div class="card text-left mb-3">
-                    <div class="card-body">
-                       <h5 class="card-title">Maths Test 3</h5>
-                       <div class="row">
-                            <div class="col">
-                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            </div>
-                            <div class="col">
-                              <a href="test.php" class="btn btn-primary float-right">Start Test</a>
+                <?php
+                $maths_tests = get_tests_by_type('maths');
+                if($maths_tests): ?>
+                    <?php foreach($maths_tests as $test): ?>
+                        <div class="card text-left mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title"><?=$test['name'];?></h5>
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="card-text"><?=$test['description'];?></p>
+                                    </div>
+                                    <div class="col">
+                                        <a href="test.php" class="btn btn-primary float-right">Start Test</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                  </div>
+                    <?php endforeach; ?>
 
-                  <div class="card text-left mb-3">
+                <?php else: ?>
+                <div class="card text-left mb-3">
                     <div class="card-body">
-                        <h5 class="card-title">Maths Test 4</h5>
-                        <div class="row">
-                            <div class="col">
-                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            </div>
-                            <div class="col">
-                              <a href="test.php" class="btn btn-primary float-right">Start Test</a>
-                            </div>
-                        </div>
+                      <h5 class="card-title">No Maths tests found</h5>
                     </div>
-                  </div>
-
+                </div>
+                <?php endif; ?>
               </div>
               <div class="tab-pane fade" id="nav-physics" role="tabpanel" aria-labelledby="nav-physics-tab">
-                  <div class="card text-left mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Physics Test 1</h5>
-                        <div class="row">
-                            <div class="col">
-                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <?php
+                    $physics_tests = get_tests_by_type('physics');
+                    if($physics_tests): ?>
+                        <?php foreach($physics_tests as $test): ?>
+                            <div class="card text-left mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?$test['name'];?></h5>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="card-text"><?$test['description'];?></p>
+                                        </div>
+                                        <div class="col">
+                                            <a href="test.php" class="btn btn-primary float-right">Start Test</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col">
-                              <a href="test.php" class="btn btn-primary float-right">Start Test</a>
-                            </div>
+                        <?php endforeach; ?>
+
+                    <?php else: ?>
+                    <div class="card text-left mb-3">
+                        <div class="card-body">
+                        <h5 class="card-title">No Physics tests found</h5>
                         </div>
                     </div>
-                  </div>
-
-                  <div class="card text-left mb-3">
-                    <div class="card-body">
-                      <h5 class="card-title">Physics Test 2</h5>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                      <a href="test.php" class="btn btn-primary float-right">Start Test</a>
-                    </div>
-                  </div>
-
+                    <?php endif; ?>
               </div>
               <div class="tab-pane fade" id="nav-chemistry" role="tabpanel" aria-labelledby="nav-chemistry-tab">
-                    <div class="card text-left mb-3">
-                      <div class="card-body">
-                        <h5 class="card-title">Chemistry Test 1</h5>
-                        <div class="row">
-                                <div class="col">
-                                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                </div>
-                                <div class="col">
-                                  <a href="test.php" class="btn btn-primary float-right">Start Test</a>
-                                </div>
-                            </div>
-                      </div>
-                    </div>
-  
-                    <div class="card text-left mb-3">
-                      <div class="card-body">
-                        <h5 class="card-title">Chemistry Test 2</h5>
-                        <div class="row">
-                                <div class="col">
-                                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                </div>
-                                <div class="col">
-                                  <a href="test.php" class="btn btn-primary float-right">Start Test</a>
+                <?php
+                    $chemistry_tests = get_tests_by_type('physics');
+                    if($chemistry_tests): ?>
+                        <?php foreach($chemistry_tests as $test): ?>
+                            <div class="card text-left mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?$test['name'];?></h5>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="card-text"><?$test['description'];?></p>
+                                        </div>
+                                        <div class="col">
+                                            <a href="test.php" class="btn btn-primary float-right">Start Test</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                      </div>
-                    </div>
-  
+                        <?php endforeach; ?>
+
+                    <?php else: ?>
                     <div class="card text-left mb-3">
-                      <div class="card-body">
-                        <h5 class="card-title">Chemistry Test 3</h5>
-                        <div class="row">
-                                <div class="col">
-                                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                </div>
-                                <div class="col">
-                                  <a href="test.php" class="btn btn-primary float-right">Start Test</a>
-                                </div>
-                            </div>
-                      </div>
+                        <div class="card-body">
+                        <h5 class="card-title">No Chemistry tests found</h5>
+                        </div>
                     </div>
+                    <?php endif; ?> 
               </div>
               <div class="tab-pane fade" id="nav-english" role="tabpanel" aria-labelledby="nav-english-tab">
-                    <div class="card text-left mb-3">
-                      <div class="card-body">
-                        <h5 class="card-title">English Test 1</h5>
-                        <div class="row">
-                                <div class="col">
-                                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                </div>
-                                <div class="col">
-                                  <a href="test.php" class="btn btn-primary float-right">Start Test</a>
+                    <?php
+                    $english_tests = get_tests_by_type('physics');
+                    if($english_tests): ?>
+                        <?php foreach($english_tests as $test): ?>
+                            <div class="card text-left mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?$test['name'];?></h5>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="card-text"><?$test['description'];?></p>
+                                        </div>
+                                        <div class="col">
+                                            <a href="test.php" class="btn btn-primary float-right">Start Test</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                      </div>
+                        <?php endforeach; ?>
+
+                    <?php else: ?>
+                    <div class="card text-left mb-3">
+                        <div class="card-body">
+                        <h5 class="card-title">No English tests found</h5>
+                        </div>
                     </div>
+                    <?php endif; ?> 
               </div>
             </div>     
           </div>
