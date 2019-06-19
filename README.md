@@ -1,2 +1,2 @@
 # Integral
-Website for testing students using **HTML**, **CSS**, **JS**
+Testing system website using **PHP**
