@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Июн 21 2019 г., 08:53
+-- Время создания: Июн 22 2019 г., 11:18
 -- Версия сервера: 10.3.15-MariaDB
 -- Версия PHP: 7.3.6
 
@@ -29,11 +29,29 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `answers` (
-  `id` int(11) NOT NULL,
+  `id` int(255) NOT NULL,
   `answer` varchar(255) NOT NULL,
-  `parent_question` int(11) NOT NULL,
+  `parent_question` int(255) NOT NULL,
   `is_correct` enum('0','1') DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `answers`
+--
+
+INSERT INTO `answers` (`id`, `answer`, `parent_question`, `is_correct`) VALUES
+(1, 'q1.var1', 1, '1'),
+(2, 'q1.var2', 1, '0'),
+(3, 'q1.var3', 1, '0'),
+(4, 'q2.var1', 2, '0'),
+(5, 'q2.var2', 2, '0'),
+(6, 'q2.var3', 2, '1'),
+(7, 'q3.var1', 3, '0'),
+(8, 'q3.var2', 3, '1'),
+(9, 'q3.var3', 3, '0'),
+(10, 'q4.var1', 4, '1'),
+(11, 'q4.var2', 4, '0'),
+(12, 'q4.var3', 4, '0');
 
 -- --------------------------------------------------------
 
@@ -42,10 +60,22 @@ CREATE TABLE `answers` (
 --
 
 CREATE TABLE `questions` (
-  `id` int(11) NOT NULL,
+  `id` int(255) NOT NULL,
   `question` varchar(255) NOT NULL,
-  `parent_test` int(11) NOT NULL
+  `additional` varchar(255) DEFAULT NULL,
+  `picture` varchar(255) DEFAULT NULL,
+  `parent_test` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `questions`
+--
+
+INSERT INTO `questions` (`id`, `question`, `additional`, `picture`, `parent_test`) VALUES
+(1, 'Maths test 1 question 1(var1)?', NULL, NULL, 1),
+(2, 'Maths test 1 question 2(var3)?', NULL, NULL, 1),
+(3, 'Maths test 1 question 3(var2)?', NULL, NULL, 1),
+(4, 'Maths test 1 question 4(var1)?', NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -54,11 +84,11 @@ CREATE TABLE `questions` (
 --
 
 CREATE TABLE `tests` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(255) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   `type` varchar(255) NOT NULL,
-  `author` varchar(255) NOT NULL
+  `author` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -66,11 +96,11 @@ CREATE TABLE `tests` (
 --
 
 INSERT INTO `tests` (`id`, `name`, `description`, `type`, `author`) VALUES
-(1, 'Maths Test 1', 'Maths test 1 description', 'maths', 'tester'),
-(3, 'Maths test 2', 'Maths test 2 description', 'maths', 'tester'),
-(4, 'Physics test 1', 'Physics test 1 description', 'physics', 'tester'),
-(5, 'Maths test 3', 'Maths test 3 description', 'maths', 'tester'),
-(6, 'Physics test 2', 'Physics test 2 description', 'physics', 'tester');
+(1, 'Maths Test 1', 'Maths test 1 description', 'maths', 2),
+(3, 'Maths test 2', 'Maths test 2 description', 'maths', 2),
+(4, 'Physics test 1', 'Physics test 1 description', 'physics', 2),
+(5, 'Maths test 3', 'Maths test 3 description', 'maths', 2),
+(6, 'Physics test 2', 'Physics test 2 description', 'physics', 2);
 
 -- --------------------------------------------------------
 
@@ -79,7 +109,7 @@ INSERT INTO `tests` (`id`, `name`, `description`, `type`, `author`) VALUES
 --
 
 CREATE TABLE `users` (
-  `id` int(11) UNSIGNED NOT NULL,
+  `id` int(255) UNSIGNED NOT NULL,
   `login` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL
@@ -129,25 +159,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `answers`
 --
 ALTER TABLE `answers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT для таблицы `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT для таблицы `tests`
 --
 ALTER TABLE `tests`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(255) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
