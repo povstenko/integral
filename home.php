@@ -46,7 +46,7 @@
                                         <p class="card-text"><?=$test['description'];?></p>
                                     </div>
                                     <div class="col">
-                                        <a href="test.php" class="btn btn-primary float-right">Start Test</a>
+                                        <a href="test.php?test=<?=$test['id'];?>" class="btn btn-primary float-right">Start Test</a>
                                     </div>
                                 </div>
                             </div>
@@ -74,7 +74,7 @@
                                             <p class="card-text"><?=$test['description'];?></p>
                                         </div>
                                         <div class="col">
-                                            <a href="test.php" class="btn btn-primary float-right">Start Test</a>
+                                            <a href="test.php?test=<?=$test['id'];?>" class="btn btn-primary float-right">Start Test</a>
                                         </div>
                                     </div>
                                 </div>
@@ -102,7 +102,7 @@
                                             <p class="card-text"><?=$test['description'];?></p>
                                         </div>
                                         <div class="col">
-                                            <a href="test.php" class="btn btn-primary float-right">Start Test</a>
+                                            <a href="test.php?test=<?=$test['id'];?>" class="btn btn-primary float-right">Start Test</a>
                                         </div>
                                     </div>
                                 </div>
@@ -130,7 +130,7 @@
                                             <p class="card-text"><?=$test['description'];?></p>
                                         </div>
                                         <div class="col">
-                                            <a href="test.php" class="btn btn-primary float-right">Start Test</a>
+                                            <a href="test.php?test=<?=$test['id'];?>" class="btn btn-primary float-right">Start Test</a>
                                         </div>
                                     </div>
                                 </div>
