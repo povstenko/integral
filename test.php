@@ -35,7 +35,7 @@
 
 <body class="my_trans_grad">
   
-  <!-- Navigation -->    
+  <!-- Navigation -->
   <?php include 'navigation.php'; ?>
 
   <!-- Header -->
@@ -50,7 +50,7 @@
       <ul class="nav nav-pills" id="pills-tab" role="tablist">
         <?php foreach($test_questions as $question): ?>
           <li class="nav-item">
-            <a class="nav-link <?php if($question['id']==1)echo 'active';?>" id="pills-<?=$question['id']?>-tab" data-toggle="pill" href="#pills-<?=$question['id']?>" role="tab" aria-controls="pills-<?=$question['id']?>" aria-selected="<?php if($question['id']==1)echo 'true';else echo 'false';?>"><?=$question['id']?></a>
+            <a class="nav-link question-list <?php if($question['id']==1)echo 'active';?>" id="pills-<?=$question['id']?>-tab" data-toggle="pill" href="#pills-<?=$question['id']?>" role="tab" aria-controls="pills-<?=$question['id']?>" aria-selected="<?php if($question['id']==1)echo 'true';else echo 'false';?>"><?=$question['id']?></a>
           </li>
         <?php endforeach; ?>
       </ul>
@@ -74,8 +74,9 @@
                       <label class="custom-control-label" for="var<?=$answer['id']?>"><?=$answer['answer']?></label>
                     </div>
                   <?php endif;?>
-                <?php endforeach; ?>
-              <a href="#" class="btn btn-primary float-right">Next</a>
+                <?php endforeach;
+                ?>
+              <a href="#pills-<?=++$question['id']?>" data-toggle="pill" class="btn btn-primary float-right btn-next">Next</a>
             </div>
           </div>
         </div>
@@ -89,7 +90,6 @@
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+  <script src="script.js"></script>
 </body>
-
 </html>
