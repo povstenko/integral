@@ -1,7 +1,9 @@
 <?php
   require "db.php";
+  include_once "functions.php";
 
   $data = $_POST;
+  $error = "";
 
   if( isset($data['do_login']))
   {
@@ -11,21 +13,36 @@
     {
       if(password_verify($data['password'], $user->password))
       {
-        // login
+        // login session
         $_SESSION['logged_user'] = $user;
+
+        // login cookie
+        if($data['remember'])
+        {
+          if (isset($_COOKIE['user_token']))
+          setcookie('user_token', '', 0, "/");
+
+          $user_token = generate_random_string(80);
+          $time = 31536000;
+          setcookie('user_token', $user_token, time() + $time, "/");
+
+          $login = $data['login'];
+
+          R::exec("UPDATE `users` SET user_token = '$user_token' WHERE login = '$login'");
+        }
+
         header('location: index.php');
       }
       else
       {
-        echo'<script>alert("Wrong password")</script> ';
+        $error = "Wrong password";
       }
     }
     else
     {
-      echo'<script>alert("Wrong login")</script> ';
+      $error = "Wrong login";
     }
   }
-  
 ?>
 
 <!doctype html>
@@ -47,7 +64,9 @@
   </head>
 
   <body class="text-center" style="background-image: linear-gradient(to left, rgba(48, 203, 206, 0.1), rgba(50, 17, 108, 0.1)">
+  
     <form class="form-login" action="login.php" method="POST">
+      <p class="mt-5 mb-3 font-weight-bold text-danger"><?=$error?></p>
       <a href="index.php">
         <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
       </a>
@@ -61,7 +80,7 @@
 
       <div class="checkbox mb-3">
         <label>
-          <input type="checkbox" value="remember-me"> Remember me
+          <input type="checkbox" value="remember-me" name="remember"> Remember me
         </label>
       </div>
       <button class="btn btn-lg btn-primary btn-block" type="submit" name="do_login">Log in</button>

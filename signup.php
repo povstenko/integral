@@ -2,12 +2,13 @@
   require "db.php";
 
   $data = $_POST;
+  $error = "";
   
   if( isset($data['do_signup']))
   {
     if(R::count('users', "login = ? OR email = ?", array($data['login'], $data['email'])) > 0)
     {
-      echo'<script>alert("This email or login is used")</script> ';
+      $error = "This email or login is used";
     }
     else
     {
@@ -45,6 +46,7 @@
 
   <body class="text-center" style="background-image: linear-gradient(to left, rgba(48, 203, 206, 0.1), rgba(50, 17, 108, 0.1)">
     <form class="form-login" action="signup.php" method="POST">
+      <p class="mt-5 mb-3 font-weight-bold text-danger"><?=$error?></p>
       <a href="index.php">
         <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
       </a>

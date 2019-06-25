@@ -5,6 +5,15 @@
 
   require "db.php";
   include_once 'functions.php';
+
+  $user = null;
+  if (isset($_COOKIE['user_token']))
+  {
+    $user = R::findOne('users', 'user_token = ?', array($_COOKIE['user_token']));
+
+    if($user != null)
+    $_SESSION['logged_user'] = $user;
+  }
 ?>
 
 <!DOCTYPE html>

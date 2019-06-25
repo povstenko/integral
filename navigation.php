@@ -16,7 +16,7 @@
             
           <?php if(isset($_SESSION['logged_user'])) : ?>
             <li class="nav-item">
-              <a class="nav-link" href="account.php">ACCOUNT (<?php echo $_SESSION['logged_user']->login;?>)</a>
+              <a class="nav-link" href="account.php">ACCOUNT (<?=$_SESSION['logged_user']->login;?>)</a>
             </li>
             <li class="nav-item">
               <a class="btn btn-outline-light" href="logout.php">LOG OUT</a>
