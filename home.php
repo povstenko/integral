@@ -32,37 +32,40 @@
           <div class="card-body">
 
             <div class="tab-content" id="nav-tabContent">
-              <div class="tab-pane fade show active" id="nav-maths" role="tabpanel" aria-labelledby="nav-maths-tab">
-
-                <?php
-                $maths_tests = get_tests_by_type('maths');
-                if($maths_tests): ?>
-                    <?php foreach($maths_tests as $test): ?>
-                        <div class="card text-left mb-3">
-                            <div class="card-body">
-                                <h5 class="card-title"><?=$test['name']?></h5>
-                                <div class="row">
-                                    <div class="col">
-                                        <p class="card-text mb-4"><?=$test['description']?></p>
-                                        <p class="card-text text-muted small"><span class="my_label mr-3"><i class="fas fa-user mr-2"></i><?=$test['login']?></span><i class="far fa-calendar mr-2"></i><?=$test['date']?></p>
+                <div class="tab-pane fade show active" id="nav-maths" role="tabpanel" aria-labelledby="nav-maths-tab">
+                    <?php
+                    $maths_tests = get_tests_by_type('maths');
+                    if($maths_tests): ?>
+                        <?php foreach($maths_tests as $test): ?>
+                            <div class="card text-left mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?=$test['name']?></h5>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="card-text mb-4"><?=$test['description']?></p>
+                                            <p class="card-text text-muted small"><span class="my_label mr-3"><i class="fas fa-user mr-2"></i><?=$test['login']?></span><i class="far fa-calendar mr-2"></i><?=$test['date']?></p>
+                                        </div>
+                                        <div class="col align-self-end">
+                                            <a href="test.php?test=<?=$test['id']?>" class="btn btn-primary float-right">Start Test<i class="fas fa-angle-right text-white ml-2"></i></a>
+                                        </div>
                                     </div>
-                                    <div class="col align-self-end">
-                                        <a href="test.php?test=<?=$test['id']?>" class="btn btn-primary float-right">Start Test</a>
-                                    </div>
-                                </div>
-                            </div> 
+                                </div> 
+                            </div>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title mb-0 text-center text-danger"><i class="fas fa-exclamation-circle mr-3"></i>No Maths tests found</h5>
                         </div>
-                    <?php endforeach; ?>
-
-                <?php else: ?>
-                <div class="card text-left mb-3">
-                    <div class="card-body">
-                      <h5 class="card-title mb-0 text-center">No Maths tests found</h5>
+                    </div>
+                    <?php endif; ?>
+                    <div class="card mt-3 rgba-indigo-strong">
+                        <button class="btn card-body my_trans_invert_grad text-center rgba-indigo-strong" href="#">
+                            <i class="fas fa-plus text-primary h3"></i>
+                        </button>
                     </div>
                 </div>
-                <?php endif; ?>
-              </div>
-              <div class="tab-pane fade" id="nav-physics" role="tabpanel" aria-labelledby="nav-physics-tab">
+                <div class="tab-pane fade" id="nav-physics" role="tabpanel" aria-labelledby="nav-physics-tab">
                     <?php
                     $physics_tests = get_tests_by_type('physics');
                     if($physics_tests): ?>
@@ -76,20 +79,24 @@
                                             <p class="card-text text-muted small"><span class="my_label mr-3"><i class="fas fa-user mr-2"></i><?=$test['login']?></span><i class="far fa-calendar mr-2"></i><?=$test['date']?></p>
                                         </div>
                                         <div class="col align-self-end">
-                                            <a href="test.php?test=<?=$test['id']?>" class="btn btn-primary float-right">Start Test</a>
+                                            <a href="test.php?test=<?=$test['id']?>" class="btn btn-primary float-right">Start Test<i class="fas fa-angle-right text-white ml-2"></i></a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         <?php endforeach; ?>
-
                     <?php else: ?>
-                    <div class="card text-left mb-3">
+                    <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title mb-0 text-center">No Physics tests found</h5>
+                        <h5 class="card-title mb-0 text-center text-danger"><i class="fas fa-exclamation-circle mr-3"></i>No Maths tests found</h5>
                         </div>
                     </div>
                     <?php endif; ?>
+                    <div class="card mt-3">
+                        <button class="btn card-body my_trans_invert_grad text-center" href="#">
+                            <i class="fas fa-plus text-primary h3"></i>
+                        </button>
+                    </div>
               </div>
               <div class="tab-pane fade" id="nav-chemistry" role="tabpanel" aria-labelledby="nav-chemistry-tab">
                 <?php
@@ -105,20 +112,24 @@
                                             <p class="card-text text-muted small"><span class="my_label mr-3"><i class="fas fa-user mr-2"></i><?=$test['login']?></span><i class="far fa-calendar mr-2"></i><?=$test['date']?></p>
                                         </div>
                                         <div class="col align-self-end">
-                                            <a href="test.php?test=<?=$test['id']?>" class="btn btn-primary float-right">Start Test</a>
+                                            <a href="test.php?test=<?=$test['id']?>" class="btn btn-primary float-right">Start Test<i class="fas fa-angle-right text-white ml-2"></i></a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         <?php endforeach; ?>
-
                     <?php else: ?>
-                    <div class="card text-left mb-3">
+                    <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title mb-0 text-center">No Chemistry tests found</h5>
+                        <h5 class="card-title mb-0 text-center text-danger"><i class="fas fa-exclamation-circle mr-3"></i>No Maths tests found</h5>
                         </div>
                     </div>
-                    <?php endif; ?> 
+                    <?php endif; ?>
+                    <div class="card mt-3">
+                        <button class="btn card-body my_trans_invert_grad text-center" href="#">
+                            <i class="fas fa-plus text-primary h3"></i>
+                        </button>
+                    </div>
               </div>
               <div class="tab-pane fade" id="nav-english" role="tabpanel" aria-labelledby="nav-english-tab">
                     <?php
@@ -134,20 +145,24 @@
                                             <p class="card-text text-muted small"><span class="my_label mr-3"><i class="fas fa-user mr-2"></i><?=$test['login']?></span><i class="far fa-calendar mr-2"></i><?=$test['date']?></p>
                                         </div>
                                         <div class="col align-self-end">
-                                            <a href="test.php?test=<?=$test['id']?>" class="btn btn-primary float-right">Start Test</a>
+                                            <a href="test.php?test=<?=$test['id']?>" class="btn btn-primary float-right">Start Test<i class="fas fa-angle-right text-white ml-2"></i></a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         <?php endforeach; ?>
-
                     <?php else: ?>
-                    <div class="card text-left mb-3">
+                    <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title mb-0 text-center">No English tests found</h5>
+                        <h5 class="card-title mb-0 text-center text-danger"><i class="fas fa-exclamation-circle mr-3"></i>No Maths tests found</h5>
                         </div>
                     </div>
                     <?php endif; ?> 
+                    <div class="card mt-3">
+                        <button class="btn card-body my_trans_invert_grad text-center" href="#">
+                            <i class="fas fa-plus text-primary h3"></i>
+                        </button>
+                    </div>
               </div>
             </div>     
           </div>
