@@ -2,12 +2,20 @@
 
 function get_tests_by_type($type)
 {
-    return R::getAll( "SELECT * FROM tests WHERE type = '$type'");
+    return R::getAll("SELECT t.id, t.name, t.description, t.type, t.author, u.login, t.date
+                    FROM tests t
+                    LEFT JOIN users u
+                    ON t.author = u.id
+                    WHERE t.type = '$type'");
 }
 
 function get_test_data_by_id($test_id)
 {
-    return R::getRow( "SELECT * FROM tests WHERE id = '$test_id'");
+    return R::getRow("SELECT t.id, t.name, t.description, t.type, t.author, u.login, t.date
+                    FROM tests t
+                    LEFT JOIN users u
+                    ON t.author = u.id
+                    WHERE t.id = '$test_id'");
 }
 
 function get_questions_by_id($test_id)

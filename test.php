@@ -25,7 +25,8 @@
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+  <link href="vendor/fontawesome-free-5.9.0-web/css/all.css" rel="stylesheet"> <!--load all styles -->
+  
   <link href="css/main.css" rel="stylesheet">
   <link href="css/test.css" rel="stylesheet">
 
@@ -39,18 +40,23 @@
   <?php include 'navigation.php'; ?>
 
   <!-- Header -->
-  <header class="my_grad bg-primary pt-5 pb-3 mb-5 border-bottom box-shadow">
+  <header class="my_grad bg-primary pt-5 pb-1 mb-5 border-bottom box-shadow">
     <div class="container h-100">
       <div class="row h-100 align-items-center">
-        <div class="col-lg-12">
-          <h1 class="display-6 text-white mb-2" style="font-family: 'Alegreya Sans SC', sans-serif;"><?=$test_data['name'];?></h1>
-          <p class="lead mb-5 text-white-50"><?=$test_data['description'];?></p>
+        <div class="col-12 col-md-10 mb-3">
+          <h1 class="display-6 text-white mb-2" style="font-family: 'Alegreya Sans SC', sans-serif;"><?=$test_data['name']?></h1>
+          <p class="lead text-white-50"><?=$test_data['description']?></p>
+        </div>
+        <div class="col-6 col-md-2">
+          <p class="lead text-white small"><i class="far fa-user mr-2"></i><?=$test_data['login']?></p>
+          <p class="lead text-white small"><i class="far fa-calendar mr-2"></i><?=$test_data['date']?></p>
+          <p class="lead text-white small"><i class="fa fa-graduation-cap mr-2"></i><?=$test_data['type']?></p>
         </div>
       </div>
-      <ul class="nav nav-pills" id="pills-tab" role="tablist">
+      <ul class="nav nav-pills mt-2 mb-2" id="pills-tab" role="tablist">
         <?php foreach($test_questions as $question): ?>
           <li class="nav-item">
-            <a class="nav-link question-list <?php if($question['id']==1)echo 'active';?>" id="pills-<?=$question['id']?>-tab" data-toggle="pill" href="#pills-<?=$question['id']?>" role="tab" aria-controls="pills-<?=$question['id']?>" aria-selected="<?php if($question['id']==1)echo 'true';else echo 'false';?>"><?=$question['id']?></a>
+            <a class="nav-link question-list <?php if($question['id']==1) echo 'active';?>" id="pills-<?=$question['id']?>-tab" data-toggle="pill" href="#pills-<?=$question['id']?>" role="tab" aria-controls="pills-<?=$question['id']?>" aria-selected="<?php if($question['id']==1)echo 'true';else echo 'false';?>"><?=$question['id']?></a>
           </li>
         <?php endforeach; ?>
       </ul>
@@ -76,7 +82,7 @@
                   <?php endif;?>
                 <?php endforeach;
                 ?>
-              <a href="#pills-<?=++$question['id']?>" data-toggle="pill" class="btn btn-primary float-right btn-next">Next</a>
+              <a href="#pills-<?=++$question['id']?>" data-toggle="pill" class="btn btn-primary float-right btn-next">Next<i class="fas fa-angle-right text-white ml-2"></i></a>
             </div>
           </div>
         </div>

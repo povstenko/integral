@@ -16,16 +16,16 @@
           <div class="card-header my_trans_invert_grad">
             <ul class="nav nav-tabs card-header-tabs">
               <li class="nav-item">
-                <a class="nav-item nav-link active" id="nav-maths-tab" data-toggle="tab" href="#nav-maths" role="tab" aria-controls="nav-maths" aria-selected="true">Maths</a>
+                <a class="nav-item nav-link active" id="nav-maths-tab" data-toggle="tab" href="#nav-maths" role="tab" aria-controls="nav-maths" aria-selected="true"><i class="fas fa-square-root-alt mr-2"></i>Maths</a>
               </li>
               <li class="nav-item">
-                <a class="nav-item nav-link" id="nav-physics-tab" data-toggle="tab" href="#nav-physics" role="tab" aria-controls="nav-physics" aria-selected="false">Physics</a>
+                <a class="nav-item nav-link" id="nav-physics-tab" data-toggle="tab" href="#nav-physics" role="tab" aria-controls="nav-physics" aria-selected="false"><i class="fas fa-atom mr-2"></i>Physics</a>
               </li>
               <li class="nav-item">
-                <a class="nav-item nav-link" id="nav-chemistry-tab" data-toggle="tab" href="#nav-chemistry" role="tab" aria-controls="nav-chemistry" aria-selected="false">Chemistry</a>
+                <a class="nav-item nav-link" id="nav-chemistry-tab" data-toggle="tab" href="#nav-chemistry" role="tab" aria-controls="nav-chemistry" aria-selected="false"><i class="fas fa-flask mr-2"></i>Chemistry</a>
               </li>
               <li class="nav-item">
-                <a class="nav-item nav-link" id="nav-english-tab" data-toggle="tab" href="#nav-english" role="tab" aria-controls="nav-english" aria-selected="false">English</a>                
+                <a class="nav-item nav-link" id="nav-english-tab" data-toggle="tab" href="#nav-english" role="tab" aria-controls="nav-english" aria-selected="false"><i class="fab fa-amilia mr-2"></i>English</a>                
               </li>
             </ul>
           </div>
@@ -40,23 +40,24 @@
                     <?php foreach($maths_tests as $test): ?>
                         <div class="card text-left mb-3">
                             <div class="card-body">
-                                <h5 class="card-title"><?=$test['name'];?></h5>
+                                <h5 class="card-title"><?=$test['name']?></h5>
                                 <div class="row">
                                     <div class="col">
-                                        <p class="card-text"><?=$test['description'];?></p>
+                                        <p class="card-text mb-4"><?=$test['description']?></p>
+                                        <p class="card-text text-muted small"><span class="my_label mr-3"><i class="fas fa-user mr-2"></i><?=$test['login']?></span><i class="far fa-calendar mr-2"></i><?=$test['date']?></p>
                                     </div>
-                                    <div class="col">
-                                        <a href="test.php?test=<?=$test['id'];?>" class="btn btn-primary float-right">Start Test</a>
+                                    <div class="col align-self-end">
+                                        <a href="test.php?test=<?=$test['id']?>" class="btn btn-primary float-right">Start Test</a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> 
                         </div>
                     <?php endforeach; ?>
 
                 <?php else: ?>
                 <div class="card text-left mb-3">
                     <div class="card-body">
-                      <h5 class="card-title">No Maths tests found</h5>
+                      <h5 class="card-title mb-0 text-center">No Maths tests found</h5>
                     </div>
                 </div>
                 <?php endif; ?>
@@ -68,13 +69,14 @@
                         <?php foreach($physics_tests as $test): ?>
                             <div class="card text-left mb-3">
                                 <div class="card-body">
-                                    <h5 class="card-title"><?=$test['name'];?></h5>
+                                    <h5 class="card-title"><?=$test['name']?></h5>
                                     <div class="row">
                                         <div class="col">
-                                            <p class="card-text"><?=$test['description'];?></p>
+                                            <p class="card-text mb-4"><?=$test['description']?></p>
+                                            <p class="card-text text-muted small"><span class="my_label mr-3"><i class="fas fa-user mr-2"></i><?=$test['login']?></span><i class="far fa-calendar mr-2"></i><?=$test['date']?></p>
                                         </div>
-                                        <div class="col">
-                                            <a href="test.php?test=<?=$test['id'];?>" class="btn btn-primary float-right">Start Test</a>
+                                        <div class="col align-self-end">
+                                            <a href="test.php?test=<?=$test['id']?>" class="btn btn-primary float-right">Start Test</a>
                                         </div>
                                     </div>
                                 </div>
@@ -84,7 +86,7 @@
                     <?php else: ?>
                     <div class="card text-left mb-3">
                         <div class="card-body">
-                        <h5 class="card-title">No Physics tests found</h5>
+                            <h5 class="card-title mb-0 text-center">No Physics tests found</h5>
                         </div>
                     </div>
                     <?php endif; ?>
@@ -96,13 +98,14 @@
                         <?php foreach($chemistry_tests as $test): ?>
                             <div class="card text-left mb-3">
                                 <div class="card-body">
-                                    <h5 class="card-title"><?=$test['name'];?></h5>
+                                    <h5 class="card-title"><?=$test['name']?></h5>
                                     <div class="row">
                                         <div class="col">
-                                            <p class="card-text"><?=$test['description'];?></p>
+                                            <p class="card-text mb-4"><?=$test['description']?></p>
+                                            <p class="card-text text-muted small"><span class="my_label mr-3"><i class="fas fa-user mr-2"></i><?=$test['login']?></span><i class="far fa-calendar mr-2"></i><?=$test['date']?></p>
                                         </div>
-                                        <div class="col">
-                                            <a href="test.php?test=<?=$test['id'];?>" class="btn btn-primary float-right">Start Test</a>
+                                        <div class="col align-self-end">
+                                            <a href="test.php?test=<?=$test['id']?>" class="btn btn-primary float-right">Start Test</a>
                                         </div>
                                     </div>
                                 </div>
@@ -112,7 +115,7 @@
                     <?php else: ?>
                     <div class="card text-left mb-3">
                         <div class="card-body">
-                        <h5 class="card-title">No Chemistry tests found</h5>
+                            <h5 class="card-title mb-0 text-center">No Chemistry tests found</h5>
                         </div>
                     </div>
                     <?php endif; ?> 
@@ -124,13 +127,14 @@
                         <?php foreach($english_tests as $test): ?>
                             <div class="card text-left mb-3">
                                 <div class="card-body">
-                                    <h5 class="card-title"><?=$test['name'];?></h5>
+                                    <h5 class="card-title"><?=$test['name']?></h5>
                                     <div class="row">
                                         <div class="col">
-                                            <p class="card-text"><?=$test['description'];?></p>
+                                            <p class="card-text mb-4"><?=$test['description']?></p>
+                                            <p class="card-text text-muted small"><span class="my_label mr-3"><i class="fas fa-user mr-2"></i><?=$test['login']?></span><i class="far fa-calendar mr-2"></i><?=$test['date']?></p>
                                         </div>
-                                        <div class="col">
-                                            <a href="test.php?test=<?=$test['id'];?>" class="btn btn-primary float-right">Start Test</a>
+                                        <div class="col align-self-end">
+                                            <a href="test.php?test=<?=$test['id']?>" class="btn btn-primary float-right">Start Test</a>
                                         </div>
                                     </div>
                                 </div>
@@ -140,7 +144,7 @@
                     <?php else: ?>
                     <div class="card text-left mb-3">
                         <div class="card-body">
-                        <h5 class="card-title">No English tests found</h5>
+                            <h5 class="card-title mb-0 text-center">No English tests found</h5>
                         </div>
                     </div>
                     <?php endif; ?> 

@@ -12,3 +12,16 @@ body {
 .my_trans_invert_grad{
   background-image: linear-gradient(to right, rgba(48, 203, 206, 0.1), rgba(50, 17, 108, 0.1));
 }
+
+.my_label{
+  display: inline;
+  background: rgba(50, 17, 108, 0.1);
+  font-size: 12px;
+  padding: .2em .6em .3em;
+  line-height: 1;
+  color: rgb(0, 81, 255);
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25em;
+}
