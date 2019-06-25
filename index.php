@@ -33,7 +33,7 @@
   <?php include_once 'home.php'; ?>
 
   <!-- Footer -->
-  <?php include_once 'footer.php'; ?>
+  <?php include_once 'footer.html'; ?>
     
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>

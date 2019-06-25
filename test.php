@@ -85,7 +85,7 @@
   </div>
 
   <!-- Footer -->
-  <?php include 'footer.php'; ?>
+  <?php include 'footer.html'; ?>
     
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
