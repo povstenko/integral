@@ -8,6 +8,8 @@
     $test_data = get_test_data_by_id($test_id);
     $test_questions = get_questions_by_id($test_id);
     $test_answers = get_answers_by_id($test_id);
+
+    shuffle($test_questions);
   }
 ?>
 
@@ -54,11 +56,11 @@
         </div>
       </div>
       <ul class="nav nav-pills mt-2 mb-2" id="pills-tab" role="tablist">
-        <?php foreach($test_questions as $question): ?>
+        <?php for($i = 1; $i <= count($test_questions); $i++): ?>
           <li class="nav-item">
-            <a class="nav-link question-list <?php if($question['id']==1) echo 'active';?>" id="pills-<?=$question['id']?>-tab" data-toggle="pill" href="#pills-<?=$question['id']?>" role="tab" aria-controls="pills-<?=$question['id']?>" aria-selected="<?php if($question['id']==1)echo 'true';else echo 'false';?>"><?=$question['id']?></a>
+            <a class="nav-link question-list <?php if($i==1) echo 'active';?>" id="pills-<?=$i?>-tab" data-toggle="pill" href="#pills-<?=$i?>" role="tab" aria-controls="pills-<?=$i?>" aria-selected="<?php if($i==1)echo 'true';else echo 'false';?>"><?=$i?></a>
           </li>
-        <?php endforeach; ?>
+        <?php endfor; ?>
       </ul>
     </div>
   </header>
@@ -66,27 +68,30 @@
   <!-- Page Content -->
   <div class="container">
     <div class="tab-content" id="pills-tabContent">   
-      <?php foreach($test_questions as $question): ?>
-        <div class="tab-pane fade <?php if($question['id']==1)echo 'show active';?>" id="pills-<?=$question['id']?>" role="tabpanel" aria-labelledby="pills-<?=$question['id']?>-tab">
+      <?php $i = 1; foreach($test_questions as $question): ?>
+        <div class="tab-pane fade <?php if($i==1)echo 'show active';?>" id="pills-<?=$i?>" role="tabpanel" aria-labelledby="pills-<?=$i?>-tab">
           <div class="card">
             <div class="card-body">
-              <h6 class="card-title"><?=$question['id']?>/6</h5>
+              <h6 class="card-title"><?=$i?>/<?=count($test_questions)?></h5>
               <h5 class="card-title"><?=$question['question']?></h5>
-              <p class="card-text"><?=$question['question']?></p>
-                <?php foreach($test_answers as $answer): ?>
-                  <?php if($answer['parent_question'] == $question['id']):?>
-                    <div class="custom-control custom-radio">
-                      <input type="radio" class="custom-control-input" id="var<?=$answer['id']?>" name="variants">
-                      <label class="custom-control-label" for="var<?=$answer['id']?>"><?=$answer['answer']?></label>
-                    </div>
-                  <?php endif;?>
-                <?php endforeach;
-                ?>
-              <a href="#pills-<?=++$question['id']?>" data-toggle="pill" class="btn btn-primary float-right btn-next">Next<i class="fas fa-angle-right text-white ml-2"></i></a>
+              <p class="card-text"><?=$question['additional']?></p>
+              <?php foreach($test_answers as $answer): ?>
+                <?php if($answer['parent_question'] == $i):?>
+                  <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="var<?=$answer['id']?>" name="variants">
+                    <label class="custom-control-label" for="var<?=$answer['id']?>"><?=$answer['answer']?></label>
+                  </div>
+                <?php endif;?>
+              <?php endforeach;?>
+              <?php if($i == count($test_questions)): ?>
+                <a href="#" data-toggle="pill" class="btn btn-primary float-right btn-next">End test<i class="fas fa-angle-right text-white ml-2"></i></a>
+              <?php else: ?>
+                <a href="#pills-<?=$i+1?>" data-toggle="pill" class="btn btn-primary float-right btn-next">Next<i class="fas fa-angle-right text-white ml-2"></i></a>
+              <?php endif; ?>
             </div>
           </div>
         </div>
-      <?php endforeach; ?>
+      <?php $i++; endforeach; ?>
     </div>
   </div>
 
