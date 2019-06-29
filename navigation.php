@@ -10,7 +10,7 @@
             <a class="nav-link" href="index.php">HOME</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">NEW TEST</a>
+            <a class="nav-link" href="create-test.php">NEW TEST</a>
           </li>
           <?php if(isset($_SESSION['logged_user'])) : ?>
             <li class="nav-item">

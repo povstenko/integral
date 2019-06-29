@@ -60,7 +60,7 @@
                     </div>
                     <?php endif; ?>
                     <div class="card mt-3 rgba-indigo-strong">
-                        <button class="btn card-body my_trans_invert_grad text-center rgba-indigo-strong" href="#">
+                        <button class="btn card-body my_trans_invert_grad text-center rgba-indigo-strong" href="create-test.php">
                             <i class="fas fa-plus text-primary h3"></i>
                         </button>
                     </div>
@@ -93,7 +93,7 @@
                     </div>
                     <?php endif; ?>
                     <div class="card mt-3">
-                        <button class="btn card-body my_trans_invert_grad text-center" href="#">
+                        <button class="btn card-body my_trans_invert_grad text-center" href="create-test.php">
                             <i class="fas fa-plus text-primary h3"></i>
                         </button>
                     </div>
@@ -126,7 +126,7 @@
                     </div>
                     <?php endif; ?>
                     <div class="card mt-3">
-                        <button class="btn card-body my_trans_invert_grad text-center" href="#">
+                        <button class="btn card-body my_trans_invert_grad text-center" href="create-test.php">
                             <i class="fas fa-plus text-primary h3"></i>
                         </button>
                     </div>
@@ -159,7 +159,7 @@
                     </div>
                     <?php endif; ?> 
                     <div class="card mt-3">
-                        <button class="btn card-body my_trans_invert_grad text-center" href="#">
+                        <button class="btn card-body my_trans_invert_grad text-center" href="create-test.php">
                             <i class="fas fa-plus text-primary h3"></i>
                         </button>
                     </div>
