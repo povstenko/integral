@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Июн 25 2019 г., 10:16
+-- Время создания: Июн 29 2019 г., 14:29
 -- Версия сервера: 10.3.15-MariaDB
 -- Версия PHP: 7.3.6
 
@@ -97,11 +97,11 @@ CREATE TABLE `tests` (
 --
 
 INSERT INTO `tests` (`id`, `name`, `description`, `type`, `author`, `date`) VALUES
-(1, 'Maths Test 1', 'Maths test 1 description', 'maths', 2, '0000-00-00'),
-(3, 'Maths test 2', 'Maths test 2 description', 'maths', 2, '0000-00-00'),
-(4, 'Physics test 1', 'Physics test 1 description', 'physics', 2, '0000-00-00'),
-(5, 'Maths test 3', 'Maths test 3 description', 'maths', 2, '0000-00-00'),
-(6, 'Physics test 2', 'Physics test 2 description', 'physics', 2, '0000-00-00');
+(1, 'Maths Test 1', 'Maths test 1 description', 'maths', 1, '2019-06-25'),
+(3, 'Maths test 2', 'Maths test 2 description', 'maths', 1, '2019-06-18'),
+(4, 'Physics test 1', 'Physics test 1 description', 'physics', 1, '2019-05-23'),
+(5, 'Maths test 3', 'Maths test 3 description', 'maths', 1, '2019-06-01'),
+(6, 'Physics test 2', 'Physics test 2 description', 'physics', 1, '2019-05-27');
 
 -- --------------------------------------------------------
 
@@ -113,6 +113,8 @@ CREATE TABLE `users` (
   `id` int(255) UNSIGNED NOT NULL,
   `login` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `avatar` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `user_token` varchar(255) CHARACTER SET utf8 DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -121,9 +123,9 @@ CREATE TABLE `users` (
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id`, `login`, `email`, `password`, `user_token`) VALUES
-(2, 'admin', 'admin@admin', '$2y$10$nP60oUv7mIS/.hQObgLKJO77/7cGJUtCtr2OnyY9KlgGkTXVd9ntW', 'viJr0bFsSvo22osANcTZEKt8aw7r2B6f4zDDbxsD4I7AF34MJnAEasUYJTvxtd4DMQAfnj9kZxYREUdI'),
-(3, 'tester', 'tester@tester', '$2y$10$TbEO2OxRNA363z1KwMWRROkokQt1OX/rYXOSLQoE7uf/lZz0mxICe', '');
+INSERT INTO `users` (`id`, `login`, `email`, `name`, `avatar`, `password`, `user_token`) VALUES
+(1, 'tester', 'tester@tester', '', NULL, '$2y$10$TbEO2OxRNA363z1KwMWRROkokQt1OX/rYXOSLQoE7uf/lZz0mxICe', 'Kc5B5oAQOsCEqbgTBcjeOlKdnoALxyhbAreleoSxU8PqDAlIQWIXChC1Lc18yoD2SCDogceu6caXiOyk'),
+(2, 'admin', 'admin@admin', 'Admin', NULL, '$2y$10$nP60oUv7mIS/.hQObgLKJO77/7cGJUtCtr2OnyY9KlgGkTXVd9ntW', 'sZUCjETCBdIoC66GJPTMhMFxnZu1wBMCcJkVWRmvmRD8pUPVH30n33DVQw1Mjhqt5zYib5TPYCwv9Qhp');
 
 --
 -- Индексы сохранённых таблиц

@@ -88,7 +88,7 @@
                     <?php else: ?>
                     <div class="card">
                         <div class="card-body">
-                        <h5 class="card-title mb-0 text-center text-danger"><i class="fas fa-exclamation-circle mr-3"></i>No Maths tests found</h5>
+                        <h5 class="card-title mb-0 text-center text-danger"><i class="fas fa-exclamation-circle mr-3"></i>No Physics tests found</h5>
                         </div>
                     </div>
                     <?php endif; ?>
@@ -121,7 +121,7 @@
                     <?php else: ?>
                     <div class="card">
                         <div class="card-body">
-                        <h5 class="card-title mb-0 text-center text-danger"><i class="fas fa-exclamation-circle mr-3"></i>No Maths tests found</h5>
+                        <h5 class="card-title mb-0 text-center text-danger"><i class="fas fa-exclamation-circle mr-3"></i>No Chemistry tests found</h5>
                         </div>
                     </div>
                     <?php endif; ?>
@@ -154,7 +154,7 @@
                     <?php else: ?>
                     <div class="card">
                         <div class="card-body">
-                        <h5 class="card-title mb-0 text-center text-danger"><i class="fas fa-exclamation-circle mr-3"></i>No Maths tests found</h5>
+                        <h5 class="card-title mb-0 text-center text-danger"><i class="fas fa-exclamation-circle mr-3"></i>No English tests found</h5>
                         </div>
                     </div>
                     <?php endif; ?> 
