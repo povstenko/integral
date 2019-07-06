@@ -109,19 +109,19 @@
             <form action="account.php" method="POST">
             <div class="form-group">
                 <label for="inputName">Name</label>
-                <input type="text" name="name" class="form-control" id="inputName" placeholder="Enter your name" value="<?=$current_user_data['name']?>">
+                <input type="text" name="name" class="form-control my_form_color" id="inputName" placeholder="Enter your name" value="<?=$current_user_data['name']?>">
               </div>
               <div class="form-group">
                 <label for="inputLogin">Login</label>
-                <input type="text" name="login" class="form-control" id="inputLogin" placeholder="Enter login" value="<?=$current_user_data['login']?>">
+                <input type="text" name="login" class="form-control my_form_color" id="inputLogin" placeholder="Enter login" value="<?=$current_user_data['login']?>">
               </div>
               <div class="form-group">
                 <label for="inputEmail">Email address</label>
-                <input type="email" name="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email" value="<?=$current_user_data['email']?>">
+                <input type="email" name="email" class="form-control my_form_color" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email" value="<?=$current_user_data['email']?>">
               </div>
               <div>
                 <label for="inputPassword">New password</label>
-                <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Enter new password">
+                <input type="password" name="password" class="form-control my_form_color" id="inputPassword" placeholder="Enter new password">
               </div>
               <p class=""><?=$error?></p>
               <button type="submit" class="btn btn-primary mt-4 float-right" name="do-save">Save changes <i class="ml-2 fas fa-save"></i></button>

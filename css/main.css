@@ -13,6 +13,10 @@ body {
   background-image: linear-gradient(to right, rgba(48, 203, 206, 0.1), rgba(50, 17, 108, 0.1));
 }
 
+.my_form_color{
+  background-color: #F7F7F9
+}
+
 .my_label{
   display: inline;
   background: rgba(50, 17, 108, 0.1);

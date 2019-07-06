@@ -60,9 +60,9 @@
                     </div>
                     <?php endif; ?>
                     <div class="card mt-3 rgba-indigo-strong">
-                        <button class="btn card-body my_trans_invert_grad text-center rgba-indigo-strong" href="create-test.php">
+                        <a href="create-test.php" class="btn card-body my_trans_invert_grad text-center" role="button">
                             <i class="fas fa-plus text-primary h3"></i>
-                        </button>
+                        </a>
                     </div>
                 </div>
                 <div class="tab-pane fade" id="nav-physics" role="tabpanel" aria-labelledby="nav-physics-tab">
@@ -93,9 +93,9 @@
                     </div>
                     <?php endif; ?>
                     <div class="card mt-3">
-                        <button class="btn card-body my_trans_invert_grad text-center" href="create-test.php">
+                        <a href="create-test.php" class="btn card-body my_trans_invert_grad text-center" role="button">
                             <i class="fas fa-plus text-primary h3"></i>
-                        </button>
+                        </a>
                     </div>
               </div>
               <div class="tab-pane fade" id="nav-chemistry" role="tabpanel" aria-labelledby="nav-chemistry-tab">
@@ -126,9 +126,9 @@
                     </div>
                     <?php endif; ?>
                     <div class="card mt-3">
-                        <button class="btn card-body my_trans_invert_grad text-center" href="create-test.php">
+                        <a href="create-test.php" class="btn card-body my_trans_invert_grad text-center" role="button">
                             <i class="fas fa-plus text-primary h3"></i>
-                        </button>
+                        </a>
                     </div>
               </div>
               <div class="tab-pane fade" id="nav-english" role="tabpanel" aria-labelledby="nav-english-tab">
@@ -159,9 +159,9 @@
                     </div>
                     <?php endif; ?> 
                     <div class="card mt-3">
-                        <button class="btn card-body my_trans_invert_grad text-center" href="create-test.php">
+                        <a href="create-test.php" class="btn card-body my_trans_invert_grad text-center" role="button">
                             <i class="fas fa-plus text-primary h3"></i>
-                        </button>
+                        </a>
                     </div>
               </div>
             </div>     
