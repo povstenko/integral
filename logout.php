@@ -4,4 +4,3 @@
   if (isset($_COOKIE['user_token']))
     setcookie('user_token', '', 0, "/");
   header('location: index.php');
-?>
