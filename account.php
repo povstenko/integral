@@ -20,7 +20,9 @@ $data = $_POST;
 $error = "";
 $old_password_error = "";
 $new_password_error = "";
-$image_error = "";
+$repeat_password_error = "";
+$avatar_error = "";
+$avatar_success = "";
 
 // EDIT USER INFO
 if (isset($data['do-save'])) {
@@ -33,25 +35,25 @@ if (isset($data['do-save'])) {
 	if ($newLogin == $current_user_data['login']) // login not changed
 	{
 		R::exec("UPDATE `users`
-      SET name = '$newName',
-      email = '$newEmail'
-      WHERE id = '$current_id'");
+				SET name = '$newName',
+				email = '$newEmail'
+				WHERE id = '$current_id'");
 
 		header("Refresh:0");
 	} else // login changed
 	{
 		R::exec("UPDATE `users`
-      SET name = '$newName',
-      email = '$newEmail'
-      WHERE id = '$current_id'");
+				SET name = '$newName',
+				email = '$newEmail'
+				WHERE id = '$current_id'");
 
 		if ($user == null) // entered login doesnt exists in db
 		{
 			if ($newLogin != null) // entered login is null
 			{
 				R::exec("UPDATE `users`
-          SET login = '$newLogin'
-          WHERE id = '$current_id'");
+          		SET login = '$newLogin'
+          		WHERE id = '$current_id'");
 
 				header("Refresh:0");
 			} else
@@ -65,22 +67,53 @@ if (isset($data['do-save'])) {
 if (isset($data['do-change-password'])) {
 	$user = R::findOne('users', 'id = ?', array($current_id));
 	$newPass = $data['password'];
+	$repPass = $data['password2'];
 
-	if (password_verify($data['old-password'], $user->password)) // if old-password == current-password
+	if (password_verify($data['old-password'], $user->password)) // old-password == current-password
 	{
-		if ($newPass != null) // if new password not null
+		if ($newPass != null) // new-password not null
 		{
-			$pass = password_hash($newPass, PASSWORD_DEFAULT);
-			R::exec("UPDATE `users`
-        SET password = '$pass'
-        WHERE id = '$current_id'");
+			if ($newPass == $repPass) // if repeat-password = new-password
+			{
+				$pass = password_hash($newPass, PASSWORD_DEFAULT);
+				R::exec("UPDATE `users`
+						SET password = '$pass'
+						WHERE id = '$current_id'");
 
-			header('location: login.php');
+				header('location: login.php');
+			} else {
+				$repeat_password_error = "Your password doesn't match.";
+			}
 		} else {
 			$new_password_error = "Empty password. Please enter your new password.";
 		}
 	} else {
 		$old_password_error = "Wrong password!";
+	}
+}
+
+// UPLOAD AVATAR
+if (isset($_POST['do-upload-avatar'])) {
+	$uploadDir = 'uploads/avatars/';
+	$uploadName = basename($_FILES['userfile']['name']);
+	$uploadFile = $uploadDir . $uploadName;
+	$info = pathinfo($uploadFile);
+
+	if ($info["extension"] == "jpg" || $info["extension"] == "png" || $info["extension"] == "gif") {
+		if (move_uploaded_file($_FILES['userfile']['tmp_name'], $uploadFile)) {
+			$oldAvatar = $current_user_data['avatar'];
+			unlink("uploads/avatars/" . $oldAvatar);
+
+			R::exec("UPDATE `users`
+					SET avatar = '$uploadName'
+					WHERE id = '$current_id'");
+
+			header("Refresh:0");
+		} else {
+			$avatar_error = "Возможная атака с помощью файловой загрузки!";
+		}
+	} else {
+		$avatar_error = "Wrong file!";
 	}
 }
 ?>
@@ -110,16 +143,29 @@ if (isset($data['do-change-password'])) {
 	<!-- Navigation -->
 	<?php include_once 'navigation.php'; ?>
 
-
 	<div class="container">
+		<!-- Edit personal info -->
 		<div class="card mt-5">
 			<div class="card-header my_trans_invert_grad">
-				<i class="fas fa-user-edit mr-2"></i>Edit your personal information
+				<i class="fas fa-user-edit mr-2"></i> Edit your personal information
 			</div>
 			<div class="card-body">
 				<div class="row ">
 					<div class="col-12 col-md-4">
-						<img src="img/user.jpg" alt="user default image" class="rounded mx-auto" style="width:300px;height:300px;">
+						<img src="<?php if ($current_user_data['avatar'] == null) {
+										echo "img/user.jpg";
+									} else {
+										echo "uploads/avatars/" . $current_user_data['avatar'];
+									} ?>" alt="avatar" width="300" height="300" class="rounded mx-auto centered-and-cropped">
+						<!-- Upload avatar -->
+						<form enctype="multipart/form-data" action="account.php" method="POST">
+							<div class="form-group mt-2 mb-2">
+								<input type="hidden" name="MAX_FILE_SIZE" value="3000000">
+								<input name="userfile" type="file">
+								<p class="text-danger"><?= $avatar_error ?></p>
+							</div>
+							<button type="submit" class="btn btn-primary text-center" name="do-upload-avatar">Change avatar<i class="ml-2 fas fa-upload"></i></button>
+						</form>
 					</div>
 					<div class="col-12 col-md-8">
 						<p class="card-text small text-info">User ID: <?= $current_user_data['id'] ?></p>
@@ -143,30 +189,39 @@ if (isset($data['do-change-password'])) {
 				</div>
 			</div>
 		</div>
-
-		<div class="card mt-3">
+		<!-- Change password -->
+		<div class="card mt-4">
 			<div class="card-header my_trans_invert_grad">
 				<i class="fa fa-key mr-2"></i> Change your password
 			</div>
-			<div class="card-body">
+			<div class="card-body pb-0">
 				<form action="account.php" method="POST">
-					<div class="form-group">
-						<input type="password" name="old-password" class="form-control my_form_color" id="inputOld" placeholder="Enter old password">
-						<p class="text-danger"><?= $old_password_error ?></p>
+					<div class="row ">
+						<div class="col-12 col-md-8">
+							<div class="form-group">
+								<input type="password" name="old-password" class="form-control my_form_color" id="inputOld" placeholder="Enter old password">
+								<p class="text-danger"><?= $old_password_error ?></p>
+							</div>
+							<div class="form-group">
+								<input type="password" name="password" class="form-control my_form_color" id="inputPassword" placeholder="Enter new password">
+								<p class="text-danger"><?= $new_password_error ?></p>
+							</div>
+							<div class="form-group mb-0">
+								<input type="password" name="password2" class="form-control my_form_color" id="inputPassword2" placeholder="Repeat new password">
+								<p class="text-danger"><?= $repeat_password_error ?></p>
+							</div>
+						</div>
+						<div class="col align-self-end">
+							<button type="submit" class="btn btn-primary mt-4 mb-3 float-right" name="do-change-password">Change password <i class="ml-2 fas fa-save"></i></button>
+						</div>
 					</div>
-					<div>
-						<input type="password" name="password" class="form-control my_form_color" id="inputPassword" placeholder="Enter new password">
-						<p class="text-danger"><?= $new_password_error ?></p>
-					</div>
-					<button type="submit" class="btn btn-primary mt-4 float-right" name="do-change-password">Change password <i class="ml-2 fas fa-save"></i></button>
 				</form>
 			</div>
 		</div>
-
+		<!-- Tests -->
 		<div class="card mt-4">
 			<div class="card-header my_trans_invert_grad">
-				<i class="fas fa-book-open mr-2"></i>
-				Your tests
+				<i class="fas fa-book-open mr-2"></i> Your tests
 			</div>
 			<div class="card-body">
 				<?php
@@ -193,10 +248,10 @@ if (isset($data['do-change-password'])) {
 						</div>
 					<?php endforeach; ?>
 				<?php endif; ?>
-				<div class="card mt-3 rgba-indigo-strong">
-					<button class="btn card-body my_trans_invert_grad text-center rgba-indigo-strong" href="#">
+				<div class="card mt-3">
+					<a href="create-test.php" class="btn card-body my_trans_invert_grad text-center" role="button">
 						<i class="fas fa-plus text-primary h3"></i>
-					</button>
+					</a>
 				</div>
 			</div>
 		</div>

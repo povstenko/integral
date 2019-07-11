@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Июн 29 2019 г., 14:29
+-- Время создания: Июл 11 2019 г., 12:46
 -- Версия сервера: 10.3.15-MariaDB
 -- Версия PHP: 7.3.6
 
@@ -124,8 +124,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `login`, `email`, `name`, `avatar`, `password`, `user_token`) VALUES
-(1, 'tester', 'tester@tester', '', NULL, '$2y$10$TbEO2OxRNA363z1KwMWRROkokQt1OX/rYXOSLQoE7uf/lZz0mxICe', 'Kc5B5oAQOsCEqbgTBcjeOlKdnoALxyhbAreleoSxU8PqDAlIQWIXChC1Lc18yoD2SCDogceu6caXiOyk'),
-(2, 'admin', 'admin@admin', 'Admin', NULL, '$2y$10$nP60oUv7mIS/.hQObgLKJO77/7cGJUtCtr2OnyY9KlgGkTXVd9ntW', 'sZUCjETCBdIoC66GJPTMhMFxnZu1wBMCcJkVWRmvmRD8pUPVH30n33DVQw1Mjhqt5zYib5TPYCwv9Qhp');
+(1, 'tester', 'tester@tester', '', 'Koala.jpg', '$2y$10$TbEO2OxRNA363z1KwMWRROkokQt1OX/rYXOSLQoE7uf/lZz0mxICe', 'CikktXyiNiyI9wsplMJ3u3WluRTUxj2FKVvQv3uD5ahhMirsBI0Xg8GEFpzoKjKLeKMn3Zp9qxnMSWHw'),
+(2, 'admin', 'admin@admin', 'Admin', 'Chrysanthemum.jpg', '$2y$10$xfbKQz7rQZUh7cV/fohPjOoLCiWWGzHlnX90ryhYclzmT6eN.iZnO', 'ncRL2LQy8jdtntintsqBKc1zy3dF50E80XFhwqM9D1IAbIVxOm7RuwYUsVJibZSNZzr7JDWXuFwem1zY');
 
 --
 -- Индексы сохранённых таблиц
