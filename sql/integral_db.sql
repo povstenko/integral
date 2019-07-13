@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Июл 11 2019 г., 12:46
+-- Время создания: Июл 13 2019 г., 13:09
 -- Версия сервера: 10.3.15-MariaDB
 -- Версия PHP: 7.3.6
 
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `answers` (
   `id` int(255) NOT NULL,
   `answer` varchar(255) NOT NULL,
-  `parent_question` int(255) NOT NULL,
+  `parent_question_id` int(255) NOT NULL,
   `is_correct` enum('0','1') DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -39,7 +39,7 @@ CREATE TABLE `answers` (
 -- Дамп данных таблицы `answers`
 --
 
-INSERT INTO `answers` (`id`, `answer`, `parent_question`, `is_correct`) VALUES
+INSERT INTO `answers` (`id`, `answer`, `parent_question_id`, `is_correct`) VALUES
 (1, 'q1.var1', 1, '1'),
 (2, 'q1.var2', 1, '0'),
 (3, 'q1.var3', 1, '0'),
@@ -64,18 +64,54 @@ CREATE TABLE `questions` (
   `question` varchar(255) NOT NULL,
   `additional` varchar(255) DEFAULT NULL,
   `picture` varchar(255) DEFAULT NULL,
-  `parent_test` int(255) NOT NULL
+  `parent_test_id` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `questions`
 --
 
-INSERT INTO `questions` (`id`, `question`, `additional`, `picture`, `parent_test`) VALUES
+INSERT INTO `questions` (`id`, `question`, `additional`, `picture`, `parent_test_id`) VALUES
 (1, 'Maths test 1 question 1(var1)?', NULL, NULL, 1),
 (2, 'Maths test 1 question 2(var3)?', NULL, NULL, 1),
 (3, 'Maths test 1 question 3(var2)?', NULL, NULL, 1),
 (4, 'Maths test 1 question 4(var1)?', NULL, NULL, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `reviews`
+--
+
+CREATE TABLE `reviews` (
+  `id` int(255) NOT NULL,
+  `test_id` int(255) NOT NULL,
+  `user_id` int(255) NOT NULL,
+  `is_like` tinyint(1) NOT NULL,
+  `comment` text DEFAULT NULL,
+  `date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `subjects`
+--
+
+CREATE TABLE `subjects` (
+  `id` int(255) NOT NULL,
+  `subject` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `subjects`
+--
+
+INSERT INTO `subjects` (`id`, `subject`) VALUES
+(1, 'Maths'),
+(2, 'Physics'),
+(3, 'Chemistry'),
+(4, 'English');
 
 -- --------------------------------------------------------
 
@@ -87,8 +123,8 @@ CREATE TABLE `tests` (
   `id` int(255) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `type` varchar(255) NOT NULL,
-  `author` int(255) NOT NULL,
+  `subject_id` int(255) NOT NULL,
+  `author_id` int(255) NOT NULL,
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -96,12 +132,12 @@ CREATE TABLE `tests` (
 -- Дамп данных таблицы `tests`
 --
 
-INSERT INTO `tests` (`id`, `name`, `description`, `type`, `author`, `date`) VALUES
-(1, 'Maths Test 1', 'Maths test 1 description', 'maths', 1, '2019-06-25'),
-(3, 'Maths test 2', 'Maths test 2 description', 'maths', 1, '2019-06-18'),
-(4, 'Physics test 1', 'Physics test 1 description', 'physics', 1, '2019-05-23'),
-(5, 'Maths test 3', 'Maths test 3 description', 'maths', 1, '2019-06-01'),
-(6, 'Physics test 2', 'Physics test 2 description', 'physics', 1, '2019-05-27');
+INSERT INTO `tests` (`id`, `name`, `description`, `subject_id`, `author_id`, `date`) VALUES
+(1, 'Maths Test 1', 'Maths test 1 description', 1, 1, '2019-06-25'),
+(3, 'Maths test 2', 'Maths test 2 description', 1, 1, '2019-06-18'),
+(4, 'Physics test 1', 'Physics test 1 description', 2, 1, '2019-05-23'),
+(5, 'Maths test 3', 'Maths test 3 description', 1, 1, '2019-06-01'),
+(6, 'Physics test 2', 'Physics test 2 description', 2, 1, '2019-05-27');
 
 -- --------------------------------------------------------
 
@@ -144,6 +180,18 @@ ALTER TABLE `questions`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `reviews`
+--
+ALTER TABLE `reviews`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `subjects`
+--
+ALTER TABLE `subjects`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `tests`
 --
 ALTER TABLE `tests`
@@ -169,6 +217,18 @@ ALTER TABLE `answers`
 -- AUTO_INCREMENT для таблицы `questions`
 --
 ALTER TABLE `questions`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT для таблицы `reviews`
+--
+ALTER TABLE `reviews`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT для таблицы `subjects`
+--
+ALTER TABLE `subjects`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --

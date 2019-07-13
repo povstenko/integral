@@ -1,6 +1,4 @@
 $('.btn-next').click(function() {
-    let opa = $('nav-pills');
-
     $('.question-list').each(function() {
         $(this).removeClass('active');
         $(this).attr("aria-selected", 'false');
@@ -14,4 +12,21 @@ $('.btn-next').click(function() {
             $(this).attr("aria-selected", 'true')
         }
     });
+});
+
+$(document).on('click', '.btn-end', function() {
+    $('.question-list').each(function() {
+        $(this).removeClass('active');
+        $(this).attr("aria-selected", 'false');
+    });
+
+    $('.result-page').toggleClass('invisible visible');
+    $('.result-page').addClass('active');
+    $('.result-page').attr("aria-selected", 'true');
+});
+
+$('.variant').on('click', function(event) {
+    console.log($(this).val());
+    var val = $(this).val();
+    //$('#output').html(val);
 });

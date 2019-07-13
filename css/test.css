@@ -1,10 +1,17 @@
 .nav-pills .nav-item [aria-selected="true"] {
     border-radius: 50% !important;
-    background-color: white;
+    background-color: white !important;
+    border: 1px solid white;
     color: #33116C;
 }
 
 .nav-pills .nav-item [aria-selected="false"] {
     border-radius: 50% !important;
+    border: 1px solid transparent;
     color: white;
+}
+
+.nav-pills .nav-item .sel-var {
+    background-color: transparent;
+    border: 1px solid white;
 }

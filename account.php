@@ -164,7 +164,7 @@ if (isset($_POST['do-upload-avatar'])) {
 								<input name="userfile" type="file">
 								<p class="text-danger"><?= $avatar_error ?></p>
 							</div>
-							<button type="submit" class="btn btn-primary text-center" name="do-upload-avatar">Change avatar<i class="ml-2 fas fa-upload"></i></button>
+							<button type="submit" class="btn btn-secondary text-center" name="do-upload-avatar">Change avatar<i class="ml-2 fas fa-upload"></i></button>
 						</form>
 					</div>
 					<div class="col-12 col-md-8">
