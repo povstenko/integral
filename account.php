@@ -159,12 +159,17 @@ if (isset($_POST['do-upload-avatar'])) {
 									} ?>" alt="avatar" width="300" height="300" class="rounded mx-auto centered-and-cropped">
 						<!-- Upload avatar -->
 						<form enctype="multipart/form-data" action="account.php" method="POST">
-							<div class="form-group mt-2 mb-2">
-								<input type="hidden" name="MAX_FILE_SIZE" value="3000000">
-								<input name="userfile" type="file">
-								<p class="text-danger"><?= $avatar_error ?></p>
+							<p class="text-danger"><?= $avatar_error ?></p>
+							<div class="input-group mt-2">
+								<div class="custom-file">
+									<input type="hidden" name="MAX_FILE_SIZE" value="3000000">
+									<input type="file" name="userfile" class="custom-file-input" id="fileGroup" aria-describedby="fileAddon">
+									<label class="custom-file-label" for="fileGroup">Choose file</label>
+								</div>
+								<div class="input-group-append">
+									<button class="btn btn-outline-primary" type="submit" name="do-upload-avatar" id="fileAddon">Upload<i class="ml-2 fas fa-upload"></i></button>
+								</div>
 							</div>
-							<button type="submit" class="btn btn-secondary text-center" name="do-upload-avatar">Change avatar<i class="ml-2 fas fa-upload"></i></button>
 						</form>
 					</div>
 					<div class="col-12 col-md-8">
