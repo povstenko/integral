@@ -1,5 +1,19 @@
 <?php
 
+function console_log($data)
+{
+	echo '<script>';
+	echo 'console.log(' . json_encode($data) . ')';
+	echo '</script>';
+}
+
+function show_array($a)
+{
+	echo "<pre>";
+	print_r($a);
+	echo "</pre>";
+}
+
 function get_tests_by_type($type)
 {
 	return R::getAll("SELECT t.id, t.name, t.description, s.subject, u.login, t.date

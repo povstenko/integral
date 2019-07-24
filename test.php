@@ -2,13 +2,40 @@
 require "db.php";
 include_once 'functions.php';
 
+$myArray = null;
+
+if (isset($_POST['answers_json'])) {
+	echo "set";
+} else {
+	echo "not set";
+}
+if (empty($_POST["answers_json"])) {
+	echo "empty";
+} else {
+	echo "not empty";
+}
+if (isset($_POST['answers_json'])){
+	console_log($_POST['answers_json']);
+	console_log(json_decode($_POST['answers_json']), true);
+}
+
+
+//$myArray = json_decode($_POST['answers_json']);
+// if (isset($_POST['answers_json']) && !empty($_POST["answers_json"])) {
+// 	$myArray = json_decode($_POST['answers_json']);
+
+// 	show_array($myArray);
+// }
+
+
+
 if (isset($_GET['test'])) {
 	$test_id = (int) $_GET['test'];
 	$test_data = get_test_data_by_id($test_id);
 	$test_questions = get_questions_by_id($test_id);
 	$test_answers = get_answers_by_id($test_id);
 
-	shuffle($test_questions);
+	shuffle($test_questions); // !!!!!!!!!!!!
 }
 ?>
 
@@ -83,8 +110,8 @@ if (isset($_GET['test'])) {
 								<?php foreach ($test_answers as $answer) : ?>
 									<?php if ($answer['parent_question_id'] == $i) : ?>
 										<div class="custom-control custom-radio">
-											<input type="radio" class="custom-control-input variant" id="var<?= $answer['id'] ?>" name="variants<?= $question['id'] ?>" value="<?= $answer['answer'] ?>">
-											<label class="custom-control-label" for="var<?= $answer['id'] ?>"><?= $answer['answer'] ?></label>
+											<input type="radio" class="custom-control-input variant" id="var-<?= $answer['id'] ?>" name="variants<?= $question['id'] ?>" value="<?= $answer['answer'] ?>" answ_id="<?= $answer['id'] ?>" parent_id="<?= $answer['parent_question_id'] ?>">
+											<label class="custom-control-label" for="var-<?= $answer['id'] ?>"><?= $answer['answer'] ?></label>
 										</div>
 									<?php endif; ?>
 								<?php endforeach; ?>
@@ -104,7 +131,10 @@ if (isset($_GET['test'])) {
 					<div class="card-body">
 						<h6 class="card-title">restab/<?= count($test_questions) ?></h5>
 							<h5 class="card-title"><?= $question['question'] ?></h5>
-							<p class="card-text"><?= $question['additional'] ?></p>
+							<p class="card-text">
+
+
+							</p>
 
 
 							<a href="index.php" class="btn btn-primary float-right">Back to Main<i class="fas fa-home text-white ml-2"></i></a>
@@ -120,7 +150,7 @@ if (isset($_GET['test'])) {
 	<!-- Bootstrap core JavaScript -->
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-	
+
 	<script src="js/script.js"></script>
 </body>
 
