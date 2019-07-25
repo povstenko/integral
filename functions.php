@@ -1,4 +1,7 @@
 <?php
+// Show errors
+ini_set("display_errors", 1);
+error_reporting(-1);
 
 function console_log($data)
 {
@@ -75,4 +78,23 @@ function generate_random_string($length)
 	}
 
 	return $randomString;
+}
+
+function get_subjects()
+{
+	return R::getAll("SELECT * FROM subjects");
+}
+
+function create_new_test($name, $description, $subject_name, $author_id)
+{
+	$currentSubject = R::getRow("SELECT * FROM subjects WHERE subject = '$subject_name'");
+
+	$test = R::dispense('tests');
+	$test->name = $name;
+	$test->description = $description;
+	$test->subject_id = $currentSubject['id'];
+	$test->author_id = $author_id;
+	$test->date = "2019-06-06"; //!!
+
+	R::store($test);
 }

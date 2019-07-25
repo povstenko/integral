@@ -1,8 +1,4 @@
 <?php
-// Show errors
-ini_set("display_errors", 1);
-error_reporting(-1);
-
 require "db.php";
 include_once 'functions.php';
 
