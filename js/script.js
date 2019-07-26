@@ -17,7 +17,6 @@ $('.btn-next').click(function() {
 let jsonArray = null;
 let arrayArgs = new Array();
 
-
 $(document).on('click', '.btn-end', function() {
     $('.question-list').each(function() {
         $(this).removeClass('active');
@@ -28,21 +27,13 @@ $(document).on('click', '.btn-end', function() {
     $('.result-page').addClass('active');
     $('.result-page').attr("aria-selected", 'true');
 
-    jsonArray = JSON.parse(JSON.stringify(arrayArgs));
-    console.log(jsonArray);
-    $.ajax({
-        type: "POST",
-        url: "test.php",
-        data: { answers_json: jsonArray },
-        success: onAjaxSuccess
-    });
+    jsonArray = JSON.stringify(arrayArgs);
+
+    $.post("check_answers.php", 'array=' + jsonArray, function(data) {
+        alert(data);
+        //console.log(data);
+    }, "json");
 });
-
-function onAjaxSuccess(data) {
-    // Здесь мы получаем данные, отправленные сервером и выводим их на экран.
-    alert(data);
-}
-
 
 $('.variant').on('click', function(event) {
     let arg = new Object();

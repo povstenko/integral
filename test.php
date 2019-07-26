@@ -2,33 +2,6 @@
 require "db.php";
 include_once 'functions.php';
 
-$myArray = null;
-
-if (isset($_POST['answers_json'])) {
-	echo "set";
-} else {
-	echo "not set";
-}
-if (empty($_POST["answers_json"])) {
-	echo "empty";
-} else {
-	echo "not empty";
-}
-if (isset($_POST['answers_json'])){
-	console_log($_POST['answers_json']);
-	console_log(json_decode($_POST['answers_json']), true);
-}
-
-
-//$myArray = json_decode($_POST['answers_json']);
-// if (isset($_POST['answers_json']) && !empty($_POST["answers_json"])) {
-// 	$myArray = json_decode($_POST['answers_json']);
-
-// 	show_array($myArray);
-// }
-
-
-
 if (isset($_GET['test'])) {
 	$test_id = (int) $_GET['test'];
 	$test_data = get_test_data_by_id($test_id);
