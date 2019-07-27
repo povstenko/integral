@@ -2,7 +2,6 @@ body {
     padding-top: 56px;
 }
 
-
 /* gradient */
 
 .my_grad {
@@ -18,7 +17,7 @@ body {
 }
 
 .my_form_color {
-    background-color: #F7F7F9
+    background-color: #F7F7F9;
 }
 
 .my_label {

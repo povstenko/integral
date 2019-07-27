@@ -8,16 +8,27 @@ if (isset($_COOKIE['user_token'])) {
 
 	if ($user != null)
 		$_SESSION['logged_user'] = $user;
-}
-else{
+} else {
 	header('location: login.php');
 }
 
-if (isset($_POST['do_create_test'])) {
-	create_new_test($_POST['name'], $_POST['description'], $_POST['subject'], $user['id']);
-	echo "<script>alert('Test ".$_POST['name']." was created!');</script>";
+// Get default subject
+$defaultSubject = null;
+if (isset($_GET['subject'])) {
+	$defaultSubject = $_GET['subject'];
 }
 
+// Create Test
+if (isset($_POST['do_create_test'])) {
+	create_new_test($_POST['name'], $_POST['description'], $_POST['subject'], $user['id']);
+	echo "<script>alert('Test " . $_POST['name'] . " was succesfully created!');</script>";
+}
+
+// Create Question
+if (isset($_POST['do_create_question'])) {
+	create_new_question($_POST['parent_test'], $_POST['question'], $_POST['additional'], "");
+	echo "<script>alert('Question " . $_POST['question'] . " was succesfully created!');</script>";
+}
 ?>
 
 <!DOCTYPE html>
@@ -51,31 +62,80 @@ if (isset($_POST['do_create_test'])) {
 	<div class="container">
 		<div class="card mt-5">
 			<div class="card-header my_trans_invert_grad">
-				<i class="fas fa-edit mr-2"></i>Create new test
+				<i class="fas fa-edit mr-2"></i>Create Test
 			</div>
-			<div class="card-body">
+			<div class="card-body pb-0">
 				<form action="create-test.php" method="POST">
-					<div class="form-group">
-						<label for="inputName">Name</label>
-						<input type="text" name="name" class="form-control my_form_color" id="inputName" placeholder="Enter Test Name" value="">
+					<div class="row">
+						<div class="col-4">
+							<div class="form-group row">
+								<label for="inputName" class="col-3 text-right">Name</label>
+								<div class="col">
+									<input type="text" name="name" class="form-control my_form_color" id="inputName" placeholder="Enter Test Name" value="">
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="selectSubjectBox" class="col-3 text-right">Subject</label>
+								<div class="col">
+									<select name="subject" class="form-control my_form_color" id="selectSubjectBox">
+										<?php $subjects = get_subjects();
+										foreach ($subjects as $subject) : ?>
+											<option><?= $subject['subject'] ?></option>
+										<?php endforeach; ?>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="form-group">
+								<textarea name="description" id="inputDescription" class="form-control my_form_color" rows="3" placeholder="Enter Test Description"></textarea>
+							</div>
+						</div>
+						<div class="col-auto">
+							<button type="submit" class="btn btn-primary mt-4 float-right" name="do_create_test">Create Test <i class="ml-2 fas fa-plus"></i></button>
+						</div>
 					</div>
-					<div class="form-group">
-						<label for="inputDescription">Description</label>
-						<input type="text" name="description" class="form-control my_form_color" id="inputDescription" placeholder="Enter Test Description" value="">
-						<p class="text-danger"></p>
-					</div>
-					<div class="form-group">
-						<label for="inputSubject">Subject</label>
-						<select name="subject" class="form-control my_form_color" id="inputSubject">
-							<?php $subjects = get_subjects();
-							foreach ($subjects as $subject) : ?>
-								<option><?= $subject['subject'] ?></option>
-							<?php endforeach; ?>
-						</select>
-					</div>
-					<button type="submit" class="btn btn-primary mt-4 float-right" name="do_create_test">Create Test <i class="ml-2 fas fa-edit"></i></button>
 				</form>
+			</div>
+		</div>
 
+		<div class="card mt-5">
+			<div class="card-header my_trans_invert_grad">
+				<i class="fas fa-edit mr-2"></i>Create Question
+			</div>
+			<div class="card-body pb-0">
+				<form action="create-test.php" method="POST">
+					<div class="row">
+						<div class="col-4">
+							<div class="form-group row">
+								<label for="selectParentTestBox" class="col-auto text-right">Parent Test</label>
+								<div class="col">
+									<select name="parent_test" class="form-control my_form_color" id="selectParentTestBox">
+										<?php $tests = get_test_data_by_author_id($user['id']);
+										foreach ($tests as $test) : ?>
+											<option><?= $test['name'] ?></option>
+										<?php endforeach; ?>
+									</select>
+								</div>
+							</div>
+
+						</div>
+						<div class="col-6">
+							<div class="form-group row">
+								<label for="inputQuestion" class="col-auto text-right">Question</label>
+								<div class="col">
+									<input type="text" name="question" class="form-control my_form_color" id="inpuQuestion" placeholder="Enter Main Question">
+								</div>
+							</div>
+							<div class="form-group">
+								<textarea name="additional" id="inputAdditional" class="form-control my_form_color" rows="3" placeholder="Enter Aditional Question"></textarea>
+							</div>
+						</div>
+						<div class="col-2">
+							<button type="submit" class="btn btn-primary mt-4 float-right" name="do_create_question">Create Question<i class="ml-2 fas fa-plus"></i></button>
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -83,6 +143,12 @@ if (isset($_POST['do_create_test'])) {
 	<!-- Footer -->
 	<?php include_once 'footer.html'; ?>
 
+	<script type="text/javascript">
+		let item = "<?= $defaultSubject; ?>";
+		if (item != null && parseInt(item)) {
+			document.getElementById('selectSubjectBox').selectedIndex = item - 1;
+		}
+	</script>
 	<!-- Bootstrap core JavaScript -->
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

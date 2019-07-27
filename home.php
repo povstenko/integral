@@ -69,7 +69,7 @@
 							</div>
 						<?php endif; ?>
 						<div class="card mt-3 rgba-indigo-strong">
-							<a href="create-test.php?subject=<?= $subject['subject'] ?>" class="btn card-body my_trans_invert_grad text-center" role="button">
+							<a href="create-test.php?subject=<?= $subject['id'] ?>" class="btn card-body my_trans_invert_grad text-center" role="button">
 								<i class="fas fa-plus text-primary h3"></i>
 							</a>
 						</div>

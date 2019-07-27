@@ -11,7 +11,7 @@ if (isset($_COOKIE['user_token'])) {
 }
 
 if (!isset($_SESSION['logged_user']))
-	header('location: index.php');
+	header('location: login.php');
 
 $current_user_data = $_SESSION['logged_user'];
 $current_id = $current_user_data['id'];
@@ -128,6 +128,8 @@ if (isset($_POST['do-upload-avatar'])) {
 	<meta name="author" content="">
 
 	<title>Integral - User Page</title>
+
+	<link rel="shortcut icon" href="favicon.png">
 
 	<!-- Bootstrap core CSS -->
 	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

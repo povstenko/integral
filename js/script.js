@@ -29,7 +29,7 @@ $(document).on('click', '.btn-end', function() {
 
     jsonArray = JSON.stringify(arrayArgs);
 
-    $.post("check_answers.php", 'array=' + jsonArray, function(data) {
+    $.post("check-answers.php", 'array=' + jsonArray, function(data) {
         console.log(data);
     });
 });

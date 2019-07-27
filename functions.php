@@ -94,7 +94,20 @@ function create_new_test($name, $description, $subject_name, $author_id)
 	$test->description = $description;
 	$test->subject_id = $currentSubject['id'];
 	$test->author_id = $author_id;
-	$test->date = "2019-06-06"; //!!
+	$test->date = date("y-m-d");
 
 	R::store($test);
+}
+
+function create_new_question($parent_test, $question, $additional, $picture)
+{
+	$currentParentTest = R::getRow("SELECT * FROM tests WHERE name = '$parent_test'");
+
+	$quest = R::dispense('questions');
+	$quest->parent_test_id = $currentParentTest['id'];
+	$quest->question = $question;
+	$quest->additional = $additional;
+	$quest->picture = $picture;
+
+	R::store($quest);
 }
