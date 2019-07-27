@@ -48,6 +48,9 @@ if (isset($data['do_login'])) {
 	<link rel="icon" href="">
 
 	<title>Integral - Log In</title>
+
+	<link rel="shortcut icon" href="favicon.png">
+
 	<!-- Bootstrap core CSS -->
 	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -61,7 +64,7 @@ if (isset($data['do_login'])) {
 	<form class="form-login" action="login.php" method="POST">
 		<p class="mt-5 mb-3 font-weight-bold text-danger"><?= $error ?></p>
 		<a href="index.php">
-			<img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+			<img class="mb-4" src="img/logo.png" alt="" width="72" height="72">
 		</a>
 		<h1 class="h3 mb-3 font-weight-normal">Please log in</h1>
 

@@ -31,6 +31,8 @@ if (isset($_POST['do_create_test'])) {
 
 	<title>Integral - Create New Test</title>
 
+	<link rel="shortcut icon" href="favicon.png">
+
 	<!-- Bootstrap core CSS -->
 	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link href="vendor/fontawesome-free-5.9.0-web/css/all.css" rel="stylesheet">
