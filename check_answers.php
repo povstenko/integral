@@ -3,11 +3,18 @@ require "db.php";
 include_once 'functions.php';
 
 if (isset($_POST['array']) && !empty($_POST['array'])) {
-    $arr = $_POST['array'];
-    //var_dump($arr);
-    //console_log($arr);
-    //$arr1 = json_decode($arr);
-    // $myArray = json_decode($_POST['array']);
-    //echo "<script>console.log(".$arr.");</script>";
-    echo $arr;
+    $data = json_decode($_POST['array']);
+
+    $array[] = null;
+    $cntr =0;
+    foreach ($data as $value) {
+        $array[$cntr]['question'] = $value->question;
+        $array[$cntr]['answer'] = $value->answer;
+        $cntr++;
+    }
+    show_array($array);
+
+    // foreach($array as $a){
+    //     echo "<br>".$a['question']." - ".$a['answer']."</br>";
+    // }
 }

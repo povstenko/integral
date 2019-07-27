@@ -30,15 +30,12 @@ $(document).on('click', '.btn-end', function() {
     jsonArray = JSON.stringify(arrayArgs);
 
     $.post("check_answers.php", 'array=' + jsonArray, function(data) {
-        alert(data);
-        //console.log(data);
-    }, "json");
+        console.log(data);
+    });
 });
 
 $('.variant').on('click', function(event) {
-    let arg = new Object();
-    arg.question = $(this).attr('parent_id');
-    arg.answer = $(this).attr('answ_id');
+    let arg = { question: $(this).attr('parent_id'), answer: $(this).attr('answ_id') };
 
     arrayArgs.push(arg);
 });
