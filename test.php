@@ -79,22 +79,22 @@ if (isset($_GET['test'])) {
 				<div class="tab-pane fade <?php if ($i == 1) echo 'show active'; ?>" id="pills-<?= $i ?>" role="tabpanel" aria-labelledby="pills-<?= $i ?>-tab">
 					<div class="card">
 						<div class="card-body">
-							<h6 class="card-title"><?= $i ?>/<?= count($test_questions) ?></h5>
-								<h5 class="card-title"><?= $question['question'] ?></h5>
-								<p class="card-text"><?= $question['additional'] ?></p>
-								<?php foreach ($test_answers as $answer) : ?>
-									<?php if ($answer['parent_question_id'] == $i) : ?>
-										<div class="custom-control custom-radio">
-											<input type="radio" class="custom-control-input variant" id="var-<?= $answer['id'] ?>" name="variants<?= $question['id'] ?>" value="<?= $answer['answer'] ?>" answ_id="<?= $answer['id'] ?>" parent_id="<?= $answer['parent_question_id'] ?>">
-											<label class="custom-control-label" for="var-<?= $answer['id'] ?>"><?= $answer['answer'] ?></label>
-										</div>
-									<?php endif; ?>
-								<?php endforeach; ?>
-								<?php if ($i == count($test_questions)) : ?>
-									<a href="#res" data-toggle="pill" class="btn btn-success float-right btn-end">End test<i class="fas fa-angle-right text-white ml-2"></i></a>
-								<?php else : ?>
-									<a href="#pills-<?= $i + 1 ?>" data-toggle="pill" class="btn btn-primary float-right btn-next">Next<i class="fas fa-angle-right text-white ml-2"></i></a>
+							<h6 class="card-title"><?= $i ?>/<?= count($test_questions) ?></h6>
+							<h5 class="card-title"><?= $question['question'] ?></h5>
+							<p class="card-text"><?= $question['additional'] ?></p>
+							<?php foreach ($test_answers as $answer) : ?>
+								<?php if ($answer['parent_question_id'] == $i) : ?>
+									<div class="custom-control custom-radio">
+										<input type="radio" class="custom-control-input variant" id="var-<?= $answer['id'] ?>" name="variants<?= $question['id'] ?>" value="<?= $answer['answer'] ?>" answ_id="<?= $answer['id'] ?>" parent_id="<?= $answer['parent_question_id'] ?>">
+										<label class="custom-control-label" for="var-<?= $answer['id'] ?>"><?= $answer['answer'] ?></label>
+									</div>
 								<?php endif; ?>
+							<?php endforeach; ?>
+							<?php if ($i == count($test_questions)) : ?>
+								<a href="#res" data-toggle="pill" class="btn btn-success float-right btn-end">End test<i class="fas fa-angle-right text-white ml-2"></i></a>
+							<?php else : ?>
+								<a href="#pills-<?= $i + 1 ?>" data-toggle="pill" class="btn btn-primary float-right btn-next">Next<i class="fas fa-angle-right text-white ml-2"></i></a>
+							<?php endif; ?>
 						</div>
 					</div>
 				</div>

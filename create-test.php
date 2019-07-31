@@ -27,7 +27,13 @@ if (isset($_POST['do_create_test'])) {
 // Create Question
 if (isset($_POST['do_create_question'])) {
 	create_new_question($_POST['parent_test'], $_POST['question'], $_POST['additional'], "");
-	echo "<script>alert('Question " . $_POST['question'] . " was succesfully created!');</script>";
+}
+
+// Create Answer
+if (isset($_POST['do_create_answer'])) { 
+	create_new_answer();// TODO
+	echo "<script>alert('Question " . $_POST[''] . " was succesfully created!');</script>";
+
 }
 ?>
 
@@ -60,6 +66,7 @@ if (isset($_POST['do_create_question'])) {
 
 	<!-- Page Content -->
 	<div class="container">
+		<!-- Create Test -->
 		<div class="card mt-5">
 			<div class="card-header my_trans_invert_grad">
 				<i class="fas fa-edit mr-2"></i>Create Test
@@ -99,6 +106,7 @@ if (isset($_POST['do_create_question'])) {
 			</div>
 		</div>
 
+		<!-- Create Question -->
 		<div class="card mt-5">
 			<div class="card-header my_trans_invert_grad">
 				<i class="fas fa-edit mr-2"></i>Create Question
@@ -118,7 +126,6 @@ if (isset($_POST['do_create_question'])) {
 									</select>
 								</div>
 							</div>
-
 						</div>
 						<div class="col-6">
 							<div class="form-group row">
@@ -133,6 +140,72 @@ if (isset($_POST['do_create_question'])) {
 						</div>
 						<div class="col-2">
 							<button type="submit" class="btn btn-primary mt-4 float-right" name="do_create_question">Create Question<i class="ml-2 fas fa-plus"></i></button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<!-- Create Answer -->
+		<div class="card mt-5">
+			<div class="card-header my_trans_invert_grad">
+				<i class="fas fa-edit mr-2"></i>Create Answer
+			</div>
+			<div class="card-body">
+				<form action="create-test.php" method="POST">
+					<div class="row">
+						<div class="col">
+							<div class="form-group row">
+								<label for="selectParentTestBox" class="col-auto text-right">Parent Test</label>
+								<div class="col">
+									<select name="parent_test" class="form-control my_form_color" id="selectParentTestBox">
+										<?php $tests = get_test_data_by_author_id($user['id']);
+										foreach ($tests as $test) : ?>
+											<option><?= $test['name'] ?></option>
+										<?php endforeach; ?>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="col">
+							<div class="form-group row">
+								<label for="selectSubjectBox" class="col-auto text-right">Parent Question</label>
+								<div class="col">
+									<select name="subject" class="form-control my_form_color" id="selectSubjectBox">
+										<?php $subjects = get_subjects();
+										foreach ($subjects as $subject) : ?>
+											<option><?= $subject['subject'] ?></option>
+										<?php endforeach; ?>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="col-2">
+
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-auto pr-0">
+							<div class="custom-control custom-radio mb-4 text-right">
+								<input type="radio" class="custom-control-input" id="var-true-1" name="vars-true" checked>
+								<label class="custom-control-label" for="var-true-1" invisible></label>
+							</div>
+							<div class="custom-control custom-radio mb-4 text-right">
+								<input type="radio" class="custom-control-input" id="var-true-2" name="vars-true">
+								<label class="custom-control-label" for="var-true-2" invisible></label>
+							</div>
+							<div class="custom-control custom-radio text-right">
+								<input type="radio" class="custom-control-input" id="var-true-3" name="vars-true">
+								<label class="custom-control-label" for="var-true-3" invisible></label>
+							</div>
+						</div>
+						<div class="col">
+							<input type="text" name="var-1" class="form-control my_form_color mb-1" id="inputVar1" placeholder="Enter Variant 1">
+							<input type="text" name="var-2" class="form-control my_form_color mb-1" id="inputVar2" placeholder="Enter Variant 2">
+							<input type="text" name="var-3" class="form-control my_form_color mb-1" id="inputVar3" placeholder="Enter Variant 3">
+						</div>
+						<div class="col-2">
+							<button type="submit" class="btn btn-primary mt-4 float-right" name="do_create_test">Create Answer<i class="ml-2 fas fa-plus"></i></button>
 						</div>
 					</div>
 				</form>
